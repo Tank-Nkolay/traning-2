@@ -1,3 +1,9 @@
+// импорт масива данных для разметки (для пропсов)
+import user from '../json/user.json';
+// импорт функции разметки
+import Section from './Section';
+// import PantingsList from './PantingsList';
+
 export const App = () => {
   return (
     <div
@@ -10,7 +16,10 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      React homework template
+      {/* общий контейнер */}
+      <Section title="Топ недели">
+        {/* <PantingsList items={pantings} /> */}
+      </Section>
     </div>
   );
 };
