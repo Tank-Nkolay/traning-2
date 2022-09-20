@@ -2,7 +2,7 @@
 import user from '../json/user.json';
 // импорт функции разметки
 import Section from './Section';
-// import PantingsList from './PantingsList';
+import ProfileList from './ProfileList';
 
 export const App = () => {
   return (
@@ -16,9 +16,8 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      {/* общий контейнер */}
       <Section title="Топ недели">
-        {/* <PantingsList items={pantings} /> */}
+        <ProfileList items={user} />
       </Section>
     </div>
   );
