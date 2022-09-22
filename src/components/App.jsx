@@ -1,9 +1,9 @@
 // импорт масива данных для разметки (для пропсов)
 import user from '../json/user.json';
 // импорт функции разметки
-import Section from './Section';
+import Section from './Section/Section';
 // import ProfileList from './ProfileList';
-import Profile from './Profile';
+import Profile from './Profile/Profile';
 
 export const App = () => {
   return (
