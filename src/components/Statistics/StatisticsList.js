@@ -5,10 +5,10 @@ function StatisticsList({ dataStatistics }) {
   return (
     <ul>
       {dataStatistics.map(dataStatistic => (
-        <li key={dataStatistic.tag}>
+        <li key={dataStatistic.id}>
           <Statistics
-            username={dataStatistic.username}
-            tag={dataStatistic.tag}
+            label={dataStatistic.label}
+            percentage={dataStatistic.percentage}
           />
         </li>
       ))}
