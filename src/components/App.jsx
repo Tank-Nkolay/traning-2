@@ -2,8 +2,8 @@
 import user from '../json/user.json';
 // импорт функции разметки
 import Section from './Section/Section';
-// import ProfileList from './ProfileList';
 import Profile from './Profile/Profile';
+import Profile from './Statistics/Statistics';
 
 export const App = () => {
   return (
@@ -26,6 +26,15 @@ export const App = () => {
           followers={user.stats.followers}
           views={user.stats.views}
           likes={user.stats.likes}
+        />
+        <Statistics
+        // username={user.username}
+        // tag={user.tag}
+        // location={user.location}
+        // avatar={user.avatar}
+        // followers={user.stats.followers}
+        // views={user.stats.views}
+        // likes={user.stats.likes}
         />
       </Section>
     </div>
