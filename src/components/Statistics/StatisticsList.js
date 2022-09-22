@@ -5,7 +5,7 @@ function StatisticsList({ dataStatistics }) {
   return (
     <ul>
       {dataStatistics.map(dataStatistic => (
-        <li key={dataStatistic.id}>
+        <li className="item" key={dataStatistic.id}>
           <Statistics
             label={dataStatistic.label}
             percentage={dataStatistic.percentage}
