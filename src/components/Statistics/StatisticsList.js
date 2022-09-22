@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 import Statistics from './Statistics';
 
-function StatisticsList({ dataStatistics }) {
+function StatisticsList({ title, stats }) {
   return (
-    <ul>
-      {dataStatistics.map(dataStatistic => (
-        <li className="item" key={dataStatistic.id}>
-          <Statistics
-            label={dataStatistic.label}
-            percentage={dataStatistic.percentage}
-          />
-        </li>
-      ))}
-    </ul>
+    <Fragment>
+      {title && <h2 className="title">{title}</h2>}
+      <ul className="stat-list">
+        {stats.map(stat => (
+          <li className="item" key={stat.id}>
+            <Statistics label={stat.label} percentage={stat.percentage} />
+          </li>
+        ))}
+      </ul>
+    </Fragment>
   );
 }
 
-// ProfileList.propTypes = {
-//   items: PropTypes.arrayOf(
+// StatisticsList.propTypes = {
+//   stats: PropTypes.arrayOf(
 //     PropTypes.shape({
-//       tag: PropTypes.string.isRequired,
+//       key: PropTypes.string.isRequired,
 //     })
 //   ),
 // };
