@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
 import Statistics from './Statistics';
+import css from './StatisticsList.module.css';
 
 function StatisticsList({ title, stats }) {
   return (
-    <Fragment>
+    <div className="stat-box">
       {title && <h2 className="title">{title}</h2>}
       <ul className="stat-list">
         {stats.map(stat => (
@@ -13,7 +14,7 @@ function StatisticsList({ title, stats }) {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </div>
   );
 }
 
