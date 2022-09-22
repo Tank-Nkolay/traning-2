@@ -1,9 +1,10 @@
 // импорт масива данных для разметки (для пропсов)
 import user from '../json/user.json';
+import data from '../json/data.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
-import Profile from './Statistics/Statistics';
+import StatisticsList from './Statistics/StatisticsList';
 
 export const App = () => {
   return (
@@ -27,15 +28,7 @@ export const App = () => {
           views={user.stats.views}
           likes={user.stats.likes}
         />
-        <Statistics
-        // username={user.username}
-        // tag={user.tag}
-        // location={user.location}
-        // avatar={user.avatar}
-        // followers={user.stats.followers}
-        // views={user.stats.views}
-        // likes={user.stats.likes}
-        />
+        <StatisticsList dataStatistics={data} />
       </Section>
     </div>
   );
