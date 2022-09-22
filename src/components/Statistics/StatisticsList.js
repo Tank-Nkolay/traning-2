@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types';
-import { Fragment } from 'react';
 import Statistics from './Statistics';
 import css from './StatisticsList.module.css';
 
 function StatisticsList({ title, stats }) {
   return (
     <div className={css.stat - box}>
-      {title && <h2 className="title">{title}</h2>}
+      {title && <h2 className={css.title}>{title}</h2>}
       <ul className={css.stat - list}>
         {stats.map(stat => (
           <li className={css.item} key={stat.id}>
