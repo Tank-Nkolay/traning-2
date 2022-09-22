@@ -9,7 +9,7 @@ function StatisticsList({ title, stats }) {
       {title && <h2 className="title">{title}</h2>}
       <ul className={css.stat - list}>
         {stats.map(stat => (
-          <li className="item" key={stat.id}>
+          <li className={css.item} key={stat.id}>
             <Statistics label={stat.label} percentage={stat.percentage} />
           </li>
         ))}
