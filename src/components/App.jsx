@@ -1,10 +1,12 @@
 // импорт масива данных для разметки (для пропсов)
 import user from '../json/user.json';
 import data from '../json/data.json';
+import friends from '../json/friends.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
+import FriendList from './FriendList/FriendList';
 
 export const App = () => {
   return (
@@ -29,6 +31,7 @@ export const App = () => {
           likes={user.stats.likes}
         />
         <Statistics title="UPLOAD STATS" stats={data} />
+        <FriendList friendsData={friends} />
       </Section>
     </div>
   );
