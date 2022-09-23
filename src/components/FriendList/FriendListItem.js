@@ -5,8 +5,8 @@ import { Span, Foto, TextName } from './FriendListItem.styled';
 function FriendListItem({ avatar, name, isOnline }) {
   return (
     <Fragment>
-      <Span></Span>
-      <Foto src={avatar} alt="User avatar" width="48" />
+      <Span type={isOnline}></Span>
+      <Foto src={avatar} alt="User avatar" />
       <TextName>{name}</TextName>
     </Fragment>
   );
