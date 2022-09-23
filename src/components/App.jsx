@@ -4,7 +4,7 @@ import data from '../json/data.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
-import StatisticsList from './Statistics/StatisticsList';
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   return (
@@ -28,7 +28,7 @@ export const App = () => {
           views={user.stats.views}
           likes={user.stats.likes}
         />
-        <StatisticsList title="UPLOAD STATS" stats={data} />
+        <Statistics title="UPLOAD STATS" stats={data} />
       </Section>
     </div>
   );

@@ -1,19 +1,32 @@
 import PropTypes from 'prop-types';
-import { Fragment } from 'react';
+import StatisticsElement from './StatisticsElement';
 import css from './Statistics.module.css';
 
-function Statistics({ label, percentage }) {
+function Statistics({ title, stats }) {
   return (
-    <Fragment>
-      <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}%</span>
-    </Fragment>
+    <div className={css.statBox}>
+      {title && <h2 className={css.title}>{title}</h2>}
+      <ul className={css.statList}>
+        {stats.map(stat => (
+          <li className={css.item} key={stat.id}>
+            <StatisticsElement
+              label={stat.label}
+              percentage={stat.percentage}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
 Statistics.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+  // title: PropTypes.string
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default Statistics;
