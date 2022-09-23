@@ -21,8 +21,8 @@ function Statistics({ title, stats }) {
 }
 
 Statistics.propTypes = {
-  // title: PropTypes.string
-  stats: PropTypes.arrayOf(
+  title: PropTypes.string,
+  stat: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,
     })
