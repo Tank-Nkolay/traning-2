@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { Fragment } from 'react';
-import css from './FriendListItem.module.css';
+import { Span, Foto, TextName } from './FriendListItem.styled';
 
 function FriendListItem({ avatar, name, isOnline }) {
   return (
     <Fragment>
-      <span className={css.status}>{isOnline}</span>
-      <img className={css.avatar} src={avatar} alt="User avatar" width="48" />
-      <p className={css.name}>{name}</p>
+      <Span></Span>
+      <Foto src={avatar} alt="User avatar" width="48" />
+      <TextName>{name}</TextName>
     </Fragment>
   );
 }
