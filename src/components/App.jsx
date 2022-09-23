@@ -28,7 +28,7 @@ export const App = () => {
           views={user.stats.views}
           likes={user.stats.likes}
         />
-        <StatisticsList stats={data} title="UPLOAD STATS" />
+        <StatisticsList title="UPLOAD STATS" stats={data} />
       </Section>
     </div>
   );

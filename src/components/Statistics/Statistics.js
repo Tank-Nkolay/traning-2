@@ -6,7 +6,7 @@ function Statistics({ label, percentage }) {
   return (
     <Fragment>
       <span className={css.label}>{label}</span>
-      <span className={css.percentage}>{percentage}</span>
+      <span className={css.percentage}>{percentage}%</span>
     </Fragment>
   );
 }

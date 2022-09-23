@@ -4,9 +4,9 @@ import css from './StatisticsList.module.css';
 
 function StatisticsList({ title, stats }) {
   return (
-    <div className={css.stat - box}>
+    <div className={css.statBox}>
       {title && <h2 className={css.title}>{title}</h2>}
-      <ul className={css.stat - list}>
+      <ul className={css.statList}>
         {stats.map(stat => (
           <li className={css.item} key={stat.id}>
             <Statistics label={stat.label} percentage={stat.percentage} />

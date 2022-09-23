@@ -1,7 +1,11 @@
 .label {
-  font-size: 24px;
+  font-size: 20px;
+  color: white;
 }
 
 .percentage {
   font-size: 24px;
+  display: block;
+  color: white;
+  margin-top: 10px;
 }
