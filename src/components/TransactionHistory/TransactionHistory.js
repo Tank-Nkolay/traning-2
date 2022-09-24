@@ -26,7 +26,6 @@ function TransactionHistory({ transactionData }) {
           ))}
         </Tbody>
       </table>
-      ;
     </div>
   );
 }
