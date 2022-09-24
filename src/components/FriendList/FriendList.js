@@ -18,13 +18,13 @@ function FriendList({ friendsData }) {
   );
 }
 
-// Statistics.propTypes = {
-//   title: PropTypes.string,
-//   stat: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       key: PropTypes.string.isRequired,
-//     })
-//   ),
-// };
+FriendList.propTypes = {
+  title: PropTypes.string,
+  stat: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+    })
+  ),
+};
 
 export default FriendList;

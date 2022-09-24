@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
 // функция определения цвета SPAN
-const setColor = ({ status }) => {
+const setColor = ({ status, theme }) => {
   switch (status) {
     case true:
-      // color green
-      return 'rgb(6, 151, 6)';
-    // color red
+      // color green ('rgb(6, 151, 6)')
+      return theme.colors.green;
+    // color red ('rgb(200, 19, 19)')
     case false:
-      return 'rgb(200, 19, 19)';
+      return theme.colors.red;
   }
 };
 
