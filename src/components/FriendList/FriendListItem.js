@@ -5,7 +5,7 @@ import { Span, Foto, TextName } from './FriendListItem.styled';
 function FriendListItem({ avatar, name, isOnline }) {
   return (
     <Fragment>
-      <Span type={isOnline}></Span>
+      <Span status={isOnline}></Span>
       <Foto src={avatar} alt="User avatar" />
       <TextName>{name}</TextName>
     </Fragment>
@@ -18,8 +18,3 @@ function FriendListItem({ avatar, name, isOnline }) {
 // };
 
 export default FriendListItem;
-
-// "avatar": "https://cdn-icons-png.flaticon.com/512/1998/1998592.png",
-// "name": "Mango",
-// "isOnline": true,
-// "id": 1812
