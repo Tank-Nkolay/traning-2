@@ -12,4 +12,8 @@ export const Card = styled.li`
   margin-top: 20px;
   padding: 20px;
   align-items: center;
+
+  &:last-child {
+    margin-bottom: 50px;
+  }
 `;
