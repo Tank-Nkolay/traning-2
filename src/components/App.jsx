@@ -2,6 +2,7 @@
 import user from '../json/user.json';
 import data from '../json/data.json';
 import friends from '../json/friends.json';
+import items from '../json/transactions.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
@@ -32,6 +33,7 @@ export const App = () => {
         />
         <Statistics title="UPLOAD STATS" stats={data} />
         <FriendList friendsData={friends} />
+        <TransactionHistory transactionData={items} />
       </Section>
     </div>
   );
