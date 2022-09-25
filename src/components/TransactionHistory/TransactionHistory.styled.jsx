@@ -10,12 +10,11 @@ export const Thead = styled.thead``;
 export const Tbody = styled.tbody``;
 
 export const Tr = styled.tr`
+  height: 40px;
   text-align: center;
   font-size: 24px;
 
-  //   &:first-child {
-  //     background-color: ${props => props.theme.colors.red};
-  //   }
+  color: ${props => props.theme.colors.grayDark};
   &:nth-child(2n) {
     background-color: ${props => props.theme.colors.white};
   }
@@ -30,4 +29,6 @@ export const Th = styled.th`
   &:last-child {
     border-right: none;
   }
+  background-color: ${props => props.theme.colors.aque};
+  color: ${props => props.theme.colors.white};
 `;

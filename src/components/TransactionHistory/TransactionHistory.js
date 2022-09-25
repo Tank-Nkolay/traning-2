@@ -7,7 +7,7 @@ function TransactionHistory({ transactionData }) {
     <div>
       <Table>
         <Thead>
-          <Tr numberLine="one">
+          <Tr>
             <Th>Type</Th>
             <Th>Amount</Th>
             <Th>Currency</Th>

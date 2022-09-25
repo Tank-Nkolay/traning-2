@@ -7,7 +7,7 @@ export const theme = {
     gray: '#aaa',
     grayLight: 'rgb(217, 212, 212)',
     grayDark: 'rgb(118, 115, 115)',
-
+    aque: 'rgb(72, 212, 212)',
     red: 'rgb(200, 19, 19)',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
