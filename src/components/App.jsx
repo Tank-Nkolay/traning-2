@@ -2,13 +2,13 @@
 import user from '../json/user.json';
 import data from '../json/data.json';
 import friends from '../json/friends.json';
-// import items from '../json/transactions.json';
+import items from '../json/transactions.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
-// import TransactionHistory from './TransactionHistory/TransactionHistory';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
@@ -34,7 +34,7 @@ export const App = () => {
         />
         <Statistics title="UPLOAD STATS" stats={data} />
         <FriendList friendsData={friends} />
-        {/* <TransactionHistory transactionData={items} /> */}
+        <TransactionHistory transactionData={items} />
       </Section>
     </div>
   );

@@ -4,6 +4,9 @@ export const theme = {
     white: '#ffffff',
     green: 'rgb(6, 151, 6)',
     red: 'rgb(200, 19, 19)',
+    grayLight: 'rgb(217, 212, 212)',
+    grayDark: 'rgb(118, 115, 115)',
+    aque: 'rgb(72, 212, 212)',
   },
 };
 
