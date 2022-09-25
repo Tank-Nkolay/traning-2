@@ -30,4 +30,5 @@
 
 .item {
   text-align: center;
+  /* width: calc(100% / 5); */
 }
