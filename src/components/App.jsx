@@ -7,8 +7,8 @@ import items from '../json/transactions.json';
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
-import FriendList from './FriendList/FriendList';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
+// import FriendList from './FriendList/FriendList';
+// import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 export const App = () => {
   return (
