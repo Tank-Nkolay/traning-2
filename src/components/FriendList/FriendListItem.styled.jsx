@@ -4,9 +4,7 @@ import styled from '@emotion/styled';
 const setColor = ({ status, theme }) => {
   switch (status) {
     case true:
-      // color green ('rgb(6, 151, 6)')
       return theme.colors.green;
-    // color red ('rgb(200, 19, 19)')
     case false:
       return theme.colors.red;
   }
