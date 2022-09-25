@@ -10,31 +10,31 @@ export const theme = {
     aque: 'rgb(72, 212, 212)',
     red: 'rgb(200, 19, 19)',
   },
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
-  fontSizes: {
-    xs: '12px',
-    s: '14px',
-    m: '16px',
-    l: '32px',
-    xl: '64px',
-  },
-  fontWeights: {
-    normal: 400,
-    bold: 700,
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.125,
-  },
-  borders: {
-    none: 'none',
-    normal: '1px solid',
-  },
-  radii: {
-    none: '0',
-    normal: '4px',
-    round: '50%',
-  },
+  // space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
+  // fontSizes: {
+  //   xs: '12px',
+  //   s: '14px',
+  //   m: '16px',
+  //   l: '32px',
+  //   xl: '64px',
+  // },
+  // fontWeights: {
+  //   normal: 400,
+  //   bold: 700,
+  // },
+  // lineHeights: {
+  //   body: 1.5,
+  //   heading: 1.125,
+  // },
+  // borders: {
+  //   none: 'none',
+  //   normal: '1px solid',
+  // },
+  // radii: {
+  //   none: '0',
+  //   normal: '4px',
+  //   round: '50%',
+  // },
 };
 
 // =================================
