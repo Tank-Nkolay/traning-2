@@ -19,8 +19,7 @@ function FriendList({ friendsData }) {
 }
 
 FriendList.propTypes = {
-  title: PropTypes.string,
-  stat: PropTypes.arrayOf(
+  friend: PropTypes.arrayOf(
     PropTypes.shape({
       key: PropTypes.string.isRequired,
     })

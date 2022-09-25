@@ -15,7 +15,7 @@ export const Tr = styled.tr`
   font-size: 24px;
 
   color: ${props => props.theme.colors.grayDark};
-  &:nth-child(2n) {
+  &:nth-of-type(2n) {
     background-color: ${props => props.theme.colors.white};
   }
 `;
