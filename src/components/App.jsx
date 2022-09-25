@@ -1,8 +1,8 @@
 // импорт масива данных для разметки (для пропсов)
 import user from '../json/user.json';
 import data from '../json/data.json';
-import friends from '../json/friends.json';
-import items from '../json/transactions.json';
+// import friends from '../json/friends.json';
+// import items from '../json/transactions.json';
 // импорт функции разметки
 import Section from './Section/Section';
 import Profile from './Profile/Profile';
