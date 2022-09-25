@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import TransactionItem from './TransactionItem';
-import { Tbody, Tr } from './TransactionHistory.styled';
+import { Table, Thead, Tbody, Tr, Th } from './TransactionHistory.styled';
 
 function TransactionHistory({ transactionData }) {
   return (
     <div>
-      <table className="transaction-history">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
-          </tr>
-        </thead>
+      <Table>
+        <Thead>
+          <Tr numberLine="one">
+            <Th>Type</Th>
+            <Th>Amount</Th>
+            <Th>Currency</Th>
+          </Tr>
+        </Thead>
 
         <Tbody>
           {transactionData.map(transaction => (
@@ -25,7 +25,7 @@ function TransactionHistory({ transactionData }) {
             </Tr>
           ))}
         </Tbody>
-      </table>
+      </Table>
     </div>
   );
 }

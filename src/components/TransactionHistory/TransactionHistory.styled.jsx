@@ -1,18 +1,33 @@
 import styled from '@emotion/styled';
 
+export const Table = styled.table`
+  border-collapse: collapse;
+  margin-bottom: 50px;
+`;
+
+export const Thead = styled.thead``;
+
 export const Tbody = styled.tbody``;
 
-export const Tr = styled.tr``;
+export const Tr = styled.tr`
+  text-align: center;
+  font-size: 24px;
 
-// display: flex;
-// box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-//   0px 2px 1px rgba(0, 0, 0, 0.2);
-// border-radius: 6px;
-// background-color: ${props => props.theme.colors.white};
+  //   &:first-child {
+  //     background-color: ${props => props.theme.colors.red};
+  //   }
+  &:nth-child(2n) {
+    background-color: ${props => props.theme.colors.white};
+  }
+`;
 
-// margin-top: 20px;
-// padding: 20px;
-// align-items: center;
-
-// &:last-child {
-//   margin-bottom: 50px;}
+export const Th = styled.th`
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 128px;
+  padding-right: 128px;
+  border-right: 2px solid ${props => props.theme.colors.white};
+  &:last-child {
+    border-right: none;
+  }
+`;

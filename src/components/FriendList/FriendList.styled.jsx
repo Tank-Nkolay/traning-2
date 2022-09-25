@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-export const Markup = styled.ul``;
+export const Markup = styled.ul`
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+`;
 
 export const Card = styled.li`
   display: flex;
