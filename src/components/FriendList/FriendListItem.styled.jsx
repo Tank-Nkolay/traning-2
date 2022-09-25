@@ -8,7 +8,7 @@ const setColor = ({ status, theme }) => {
     case false:
       return theme.colors.red;
     default:
-      return theme.colors.red;
+      return theme.colors.black;
   }
 };
 

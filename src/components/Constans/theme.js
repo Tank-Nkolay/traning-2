@@ -1,6 +1,7 @@
 // вынесенные константы цветов можно применять на ПРОПС
 export const theme = {
   colors: {
+    black: '#010101',
     white: '#ffffff',
     green: 'rgb(6, 151, 6)',
     red: 'rgb(200, 19, 19)',
