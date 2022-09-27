@@ -30,7 +30,22 @@ class Feedback extends React.Component {
   //   };
 
   render() {
-    return <div>eee</div>;
+    return (
+      <div>
+        <h2>Please leave feedback</h2>
+        <div>
+          <button>good</button>
+          <button>neutral</button>
+          <button>bad</button>
+        </div>
+        <h3>Statistic</h3>
+        <div>
+          <p>Good:</p>
+          <p>Neutral:</p>
+          <p>Bad:</p>
+        </div>
+      </div>
+    );
   }
 }
 
