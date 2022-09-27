@@ -3,16 +3,18 @@ import React from 'react';
 
 class Feedback extends React.Component {
   // ДЕФОЛТНОЕ значение ПРОПС
-  static defaultProps = {
-    initialValue: 5,
-  };
+  //   static defaultProps = {
+  //     initialValue: 5,
+  //   };
   static propTypes = {
     //
   };
 
   // Передаем стартовое значение через ПРОПС, новый вариант через БАБЕЛЬ
   state = {
-    value: this.props.initialValue,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
 
   //   handleIncrimente = () => {
@@ -28,7 +30,7 @@ class Feedback extends React.Component {
   //   };
 
   render() {
-    return <div></div>;
+    return <div>eee</div>;
   }
 }
 
