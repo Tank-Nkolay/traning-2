@@ -1,5 +1,14 @@
 import React from 'react';
-// import Controls from './Controls';
+// import PropTypes from 'prop-types';
+import {
+  Markup,
+  Title,
+  BoxButton,
+  Button,
+  Statistics,
+  BoxInfo,
+  Info,
+} from './Feedback.styled.jsx';
 
 class Feedback extends React.Component {
   // ДЕФОЛТНОЕ значение ПРОПС
@@ -31,20 +40,20 @@ class Feedback extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Please leave feedback</h2>
-        <div>
-          <button>good</button>
-          <button>neutral</button>
-          <button>bad</button>
-        </div>
-        <h3>Statistic</h3>
-        <div>
-          <p>Good:</p>
-          <p>Neutral:</p>
-          <p>Bad:</p>
-        </div>
-      </div>
+      <Markup>
+        <Title>Please leave feedback</Title>
+        <BoxButton>
+          <Button>good</Button>
+          <Button>neutral</Button>
+          <Button>bad</Button>
+        </BoxButton>
+        <Statistics>Statistics</Statistics>
+        <BoxInfo>
+          <Info>Good:</Info>
+          <Info>Neutral:</Info>
+          <Info>Bad:</Info>
+        </BoxInfo>
+      </Markup>
     );
   }
 }
