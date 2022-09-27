@@ -9,6 +9,8 @@ import Profile from './Profile/Profile';
 import Statistics from './Statistics/Statistics';
 import FriendList from './FriendList/FriendList';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
+// =========================================================
+import Feedback from './Feedback/Feedback';
 
 export const App = () => {
   return (
@@ -23,6 +25,7 @@ export const App = () => {
       }}
     >
       <Section>
+        <Feedback />
         <Profile
           username={user.username}
           tag={user.tag}
