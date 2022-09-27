@@ -35,13 +35,3 @@ class Feedback extends React.Component {
 }
 
 export default Feedback;
-
-{
-  /* <div>
-<span>{this.state.value}</span>
-<Controls
-  onIncrimente={this.handleIncrimente}
-  onDecremente={this.handleDecremente}
-/>
-</div> */
-}
