@@ -29,7 +29,7 @@ function TransactionHistory({ transactionData }) {
 }
 
 TransactionHistory.propTypes = {
-  TransactionHistory: PropTypes.arrayOf(
+  transactionData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
     })
