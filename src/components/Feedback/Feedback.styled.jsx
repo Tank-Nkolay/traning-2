@@ -23,6 +23,7 @@ export const Button = styled.button`
   border-radius: ${props => props.theme.space[3]};
   background-color: ${p => p.theme.colors.greyLight};
 
+  padding: ${props => props.theme.space[3]};
   margin-right: ${props => props.theme.space[4]};
   &:last-child {
     margin-right: ${props => props.theme.space[0]};

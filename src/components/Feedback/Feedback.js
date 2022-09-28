@@ -26,11 +26,21 @@ class Feedback extends React.Component {
     bad: 0,
   };
 
-  //   handleIncrimente = () => {
-  //     this.setState(prevState => ({
-  //       value: prevState.value + 1,
-  //     }));
-  //   };
+  handleIncrimenteGood = () => {
+    this.setState(prevState => ({
+      good: prevState.good + 1,
+    }));
+  };
+  handleIncrimenteNeutral = () => {
+    this.setState(prevState => ({
+      neutral: prevState.neutral + 1,
+    }));
+  };
+  handleIncrimenteBad = () => {
+    this.setState(prevState => ({
+      bad: prevState.bad + 1,
+    }));
+  };
 
   //   handleDecremente = () => {
   //     this.setState(prevState => ({
@@ -43,15 +53,15 @@ class Feedback extends React.Component {
       <Markup>
         <Title>Please leave feedback</Title>
         <BoxButton>
-          <Button>good</Button>
-          <Button>neutral</Button>
-          <Button>bad</Button>
+          <Button onClick={this.handleIncrimenteGood}>good</Button>
+          <Button onClick={this.handleIncrimenteNeutral}>neutral</Button>
+          <Button onClick={this.handleIncrimenteBad}>bad</Button>
         </BoxButton>
         <Statistics>Statistics</Statistics>
         <BoxInfo>
-          <Info>Good:</Info>
-          <Info>Neutral:</Info>
-          <Info>Bad:</Info>
+          <Info>Good: {this.state.good}</Info>
+          <Info>Neutral: {this.state.neutral}</Info>
+          <Info>Bad: {this.state.bad}</Info>
         </BoxInfo>
       </Markup>
     );
