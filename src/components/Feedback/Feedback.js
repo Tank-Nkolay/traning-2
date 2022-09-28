@@ -45,7 +45,7 @@ class Feedback extends React.Component {
   // ===================================
   countTotalFeedback = () => {
     this.setState(prevState => ({
-      total: this.good + this.neutral + this.bad,
+      total: prevState.good + prevState.neutral + prevState.bad,
     }));
     // ===================================
   };
