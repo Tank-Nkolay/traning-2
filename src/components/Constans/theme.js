@@ -9,6 +9,16 @@ export const theme = {
     grayDark: 'rgb(118, 115, 115)',
     aque: 'rgb(72, 212, 212)',
   },
+  space: ['0', '2px', '4px', '8px', '16px', '32px', '64px', '128px', '256px'],
+  fontSizes: {
+    // xs: '12px',
+    // s: '14px',
+    // m: '16px',
+    mm: '24px',
+    l: '32px',
+    ll: '48px',
+    // xl: '64px',
+  },
 };
 
 // // =================================
@@ -26,13 +36,7 @@ export const theme = {
 //     red: 'rgb(200, 19, 19)',
 //   },
 //   // space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
-//   // fontSizes: {
-//   //   xs: '12px',
-//   //   s: '14px',
-//   //   m: '16px',
-//   //   l: '32px',
-//   //   xl: '64px',
-//   // },
+
 //   // fontWeights: {
 //   //   normal: 400,
 //   //   bold: 700,
