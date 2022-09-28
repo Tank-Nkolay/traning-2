@@ -6,7 +6,7 @@ import Statistics from './Statistics';
 import { Markup, Title, TitleStatistics } from './Feedback.styled.jsx';
 
 class Feedback extends React.Component {
-  // Передаем стартовое значение
+  // Передаем стартовое значение ===
   state = {
     good: 0,
     neutral: 0,
