@@ -11,11 +11,18 @@ export const Title = styled.h2`
   font-size: ${p => p.theme.fontSizes.ll};
 `;
 
-export const BoxButton = styled.div``;
+export const BoxButton = styled.div`
+  margin-top: ${props => props.theme.space[5]};
+  margin-bottom: ${props => props.theme.space[5]};
+`;
 
 export const Button = styled.button`
-  margin-right: ${props => props.theme.space[4]};
   font-size: ${p => p.theme.fontSizes.l};
+
+  margin-right: ${props => props.theme.space[4]};
+  &:last-child {
+    margin-right: ${props => props.theme.space[0]};
+  }
 `;
 
 export const Statistics = styled.h3`
