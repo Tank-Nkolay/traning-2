@@ -5,7 +5,7 @@ import {
   Title,
   BoxButton,
   Button,
-  Statistics,
+  TitleStatistics,
   BoxInfo,
   Info,
 } from './Feedback.styled.jsx';
@@ -59,7 +59,7 @@ class Feedback extends React.Component {
           <Button onClick={this.handleIncrimenteNeutral}>neutral</Button>
           <Button onClick={this.handleIncrimenteBad}>bad</Button>
         </BoxButton>
-        <Statistics>Statistics</Statistics>
+        <TitleStatistics>Statistics</TitleStatistics>
         <BoxInfo>
           <Info>Good: {this.state.good}</Info>
           <Info>Neutral: {this.state.neutral}</Info>
@@ -79,6 +79,9 @@ class Feedback extends React.Component {
 }
 
 export default Feedback;
+
+// Вынеси отображение статистики в отдельный компонент
+/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}> */
 
 // ===================================
 // countPositiveReviewsPercentage() {
