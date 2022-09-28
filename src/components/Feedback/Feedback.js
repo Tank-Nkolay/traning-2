@@ -1,14 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import {
-  Markup,
-  Title,
-  BoxButton,
-  Button,
-  TitleStatistics,
-  BoxInfo,
-  Info,
-} from './Feedback.styled.jsx';
+import Section from '../Section/Section';
+import FeedbackOptions from './FeedbackOptions';
+import Statistics from './Statistics';
+import { Markup, Title, TitleStatistics } from './Feedback.styled.jsx';
 
 class Feedback extends React.Component {
   // ДЕФОЛТНОЕ значение ПРОПС
@@ -54,25 +49,24 @@ class Feedback extends React.Component {
     return (
       <Markup>
         <Title>Please leave feedback</Title>
-        <BoxButton>
-          <Button onClick={this.handleIncrimenteGood}>good</Button>
-          <Button onClick={this.handleIncrimenteNeutral}>neutral</Button>
-          <Button onClick={this.handleIncrimenteBad}>bad</Button>
-        </BoxButton>
+        <Section title="">
+          <FeedbackOptions
+            clickGood={this.handleIncrimenteGood}
+            clickNeutral={this.handleIncrimenteNeutral}
+            clickBad={this.handleIncrimenteBad}
+          />
+        </Section>
+
         <TitleStatistics>Statistics</TitleStatistics>
-        <BoxInfo>
-          <Info>Good: {this.state.good}</Info>
-          <Info>Neutral: {this.state.neutral}</Info>
-          <Info>Bad: {this.state.bad}</Info>
-          <Info>Total: {this.countTotalFeedback()}</Info>
-          <Info>
-            Positive feedback:
-            {this.countPositiveFeedbackPercentage() > '0'
-              ? this.countPositiveFeedbackPercentage()
-              : '0'}
-            %
-          </Info>
-        </BoxInfo>
+        <Section title="">
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            total={this.countTotalFeedback()}
+            positivePercentage={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
       </Markup>
     );
   }
@@ -80,11 +74,8 @@ class Feedback extends React.Component {
 
 export default Feedback;
 
-// Вынеси отображение статистики в отдельный компонент
-/* <Statistics good={} neutral={} bad={} total={} positivePercentage={}> */
-
 // ===================================
-// countPositiveReviewsPercentage() {
-//   return parseInt((this.state.good / this.countTotalReviews()) * 100);
+// countPositiveFeedbackPercentage() {
+//   return parseInt((this.state.good / this.countTotalFeedback()) * 100);
 // }
 // ===================================

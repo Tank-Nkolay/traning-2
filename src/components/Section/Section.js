@@ -1,8 +1,13 @@
 import PropTypes from 'prop-types';
 
 // передаем в секцию детей
-function Section({ children }) {
-  return <div>{children}</div>;
+function Section({ title, children }) {
+  return (
+    <div>
+      {title && <h2>{title}</h2>}
+      {children}
+    </div>
+  );
 }
 
 Section.propTypes = {
