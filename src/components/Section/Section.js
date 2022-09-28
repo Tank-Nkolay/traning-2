@@ -11,6 +11,7 @@ function Section({ title, children }) {
 }
 
 Section.propTypes = {
+  title: PropTypes.string,
   //   значение что угодно (что-то должно быть)
   children: PropTypes.node,
 };

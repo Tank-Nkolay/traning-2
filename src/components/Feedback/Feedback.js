@@ -6,14 +6,6 @@ import Statistics from './Statistics';
 import { Markup, Title, TitleStatistics } from './Feedback.styled.jsx';
 
 class Feedback extends React.Component {
-  // ДЕФОЛТНОЕ значение ПРОПС
-  //   static defaultProps = {
-  //     initialValue: 5,
-  //   };
-  static propTypes = {
-    //
-  };
-
   // Передаем стартовое значение
   state = {
     good: 0,
@@ -78,4 +70,12 @@ export default Feedback;
 // countPositiveFeedbackPercentage() {
 //   return parseInt((this.state.good / this.countTotalFeedback()) * 100);
 // }
+// ===================================
+// ДЕФОЛТНОЕ значение ПРОПС
+//   static defaultProps = {
+//     initialValue: 5,
+//   };
+// static propTypes = {
+//   //
+// };
 // ===================================
