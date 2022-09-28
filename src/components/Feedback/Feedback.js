@@ -24,6 +24,7 @@ class Feedback extends React.Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    total: 0,
   };
 
   handleIncrimenteGood = () => {
@@ -41,12 +42,13 @@ class Feedback extends React.Component {
       bad: prevState.bad + 1,
     }));
   };
-
-  //   handleDecremente = () => {
-  //     this.setState(prevState => ({
-  //       value: prevState.value - 1,
-  //     }));
-  //   };
+  // ===================================
+  countTotalFeedback = () => {
+    this.setState(prevState => ({
+      total: this.good + this.neutral + this.bad,
+    }));
+    // ===================================
+  };
 
   render() {
     return (
@@ -62,6 +64,8 @@ class Feedback extends React.Component {
           <Info>Good: {this.state.good}</Info>
           <Info>Neutral: {this.state.neutral}</Info>
           <Info>Bad: {this.state.bad}</Info>
+          <Info>Total: {this.state.total}</Info>
+          <Info>Positive feedback: {this.total}</Info>
         </BoxInfo>
       </Markup>
     );
