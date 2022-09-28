@@ -19,7 +19,7 @@ class Feedback extends React.Component {
     //
   };
 
-  // Передаем стартовое значение через ПРОПС, новый вариант через БАБЕЛЬ
+  // Передаем стартовое значение
   state = {
     good: 0,
     neutral: 0,
@@ -42,13 +42,6 @@ class Feedback extends React.Component {
     }));
   };
 
-  // ===================================
-  // countTotalFeedback() {
-  //   return Object.values(this.state).reduce(
-  //     (previousValue, currentValue) => previousValue + currentValue
-  //   );
-  // }
-
   countTotalFeedback() {
     return this.state.good + this.state.neutral + this.state.bad;
   }
@@ -56,11 +49,6 @@ class Feedback extends React.Component {
   countPositiveFeedbackPercentage() {
     return Math.floor((this.state.good / this.countTotalFeedback()) * 100);
   }
-
-  // countPositiveReviewsPercentage() {
-  //   return parseInt((this.state.good / this.countTotalReviews()) * 100);
-  // }
-  // ===================================
 
   render() {
     return (
@@ -78,7 +66,11 @@ class Feedback extends React.Component {
           <Info>Bad: {this.state.bad}</Info>
           <Info>Total: {this.countTotalFeedback()}</Info>
           <Info>
-            Positive feedback: {this.countPositiveFeedbackPercentage()}%
+            Positive feedback:
+            {this.countPositiveFeedbackPercentage() > '0'
+              ? this.countPositiveFeedbackPercentage()
+              : '0'}
+            %
           </Info>
         </BoxInfo>
       </Markup>
@@ -87,3 +79,9 @@ class Feedback extends React.Component {
 }
 
 export default Feedback;
+
+// ===================================
+// countPositiveReviewsPercentage() {
+//   return parseInt((this.state.good / this.countTotalReviews()) * 100);
+// }
+// ===================================
