@@ -1,11 +1,5 @@
-// импорт масива данных для разметки (для пропсов)
-import friends from '../json/friends.json';
-import items from '../json/transactions.json';
 // импорт функции разметки
 import Section from './Section/Section';
-import FriendList from './FriendList/FriendList';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
-// =========================================================
 import Feedback from './Feedback/Feedback';
 
 export const App = () => {
@@ -22,8 +16,6 @@ export const App = () => {
     >
       <Section>
         <Feedback />
-        <FriendList friendsData={friends} />
-        <TransactionHistory transactionData={items} />
       </Section>
     </div>
   );
