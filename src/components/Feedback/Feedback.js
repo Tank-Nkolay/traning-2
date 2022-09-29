@@ -1,8 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Section from '../Section/Section';
-import FeedbackOptions from './FeedbackOptions';
-import Statistics from './Statistics';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Statistics from '../Statistics/Statistics';
+import Notification from '../Notification/Notification';
 import { Markup, Title, TitleStatistics } from './Feedback.styled.jsx';
 
 class Feedback extends React.Component {
@@ -37,6 +38,7 @@ class Feedback extends React.Component {
     return Math.floor((this.state.good / this.countTotalFeedback()) * 100);
   }
 
+  // {this.state.visible ? 'Скрыть' : 'Показать'}
   render() {
     return (
       <Markup>
@@ -51,13 +53,17 @@ class Feedback extends React.Component {
 
         <TitleStatistics>Statistics</TitleStatistics>
         <Section title="">
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          {this.countTotalFeedback() > '0' ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
       </Markup>
     );
