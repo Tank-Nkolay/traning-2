@@ -1,4 +1,5 @@
 import React from 'react';
+import { nanoid } from 'nanoid';
 // импорт функции разметки
 import Section from './Section/Section';
 import FormInput from './FormInput';
@@ -13,11 +14,12 @@ export class App extends React.Component {
 
   formSubmitHandler = data => {
     const { name } = data;
-    this.addContact(name);
+    this.addContacts(name);
   };
 
-  addContact = name => {
+  addContacts = name => {
     const contact = {
+      id: nanoid(),
       name,
     };
     this.setState(({ contacts }) => ({

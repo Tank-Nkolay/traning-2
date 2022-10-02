@@ -6,9 +6,7 @@ function Contacts({ contacts }) {
   return (
     <BoxContacts>
       {contacts.map(contact => (
-        <ul key={1}>
-          <li>{contact.name}</li>
-        </ul>
+        <li key={contact.id}>{contact.name}</li>
       ))}
     </BoxContacts>
   );
