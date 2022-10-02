@@ -3,12 +3,22 @@ import React from 'react';
 import { BoxName } from './Name.styled';
 // import { formSubmitHandler } from './formSubmitHandler';
 
-const Name = name => <BoxName key={name}>{1}</BoxName>;
+export default Name;
+
+function Name({ names }) {
+  return (
+    <div>
+      {names.map(name => (
+        <ul key={1}>
+          <li>{name}</li>
+        </ul>
+      ))}
+    </div>
+  );
+}
 
 // FeedbackOptions.propTypes = {
 //   clickGood: PropTypes.func.isRequired,
 //   clickNeutral: PropTypes.func.isRequired,
 //   clickBad: PropTypes.func.isRequired,
 // };
-
-export default Name;

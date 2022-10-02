@@ -8,33 +8,29 @@ export class App extends React.Component {
     contacts: [],
     name: '',
   };
+
   formSubmitHandler = data => {
-    console.log(data);
-    this.setState({ name: data });
-    // this.state.name(data);
-    // const { contacts } = this.state;
-    // const { name, number } = data;
+    const { name } = data;
+    this.addContact(name);
+  };
+
+  addContact = name => {
+    const contact = {
+      name,
+    };
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
   };
 
   render() {
     return (
-      <div
-        style={{
-          // height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101',
-        }}
-      >
-        <Section>
-          <Phonebook
-            name={this.state.name}
-            onSubmitData={this.formSubmitHandler}
-          />
-        </Section>
-      </div>
+      <Section>
+        <Phonebook
+          contacts={this.state.contacts}
+          onSubmitData={this.formSubmitHandler}
+        />
+      </Section>
     );
   }
 }

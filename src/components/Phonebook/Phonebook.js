@@ -44,7 +44,8 @@ class Phonebook extends React.Component {
   };
 
   render() {
-    const { name } = this.props;
+    const { contacts } = this.props;
+    console.log(contacts);
     return (
       <Markup>
         <Title>Phonebook</Title>
@@ -70,9 +71,7 @@ class Phonebook extends React.Component {
 
         <TitleContacts>Contacts</TitleContacts>
         <Section title="">
-          <ul>
-            <Name names={name} />
-          </ul>
+          <Name names={contacts} />
         </Section>
       </Markup>
     );
