@@ -1,3 +1,3 @@
 import styled from '@emotion/styled';
 
-export const BoxPhonebook = styled.div``;
+export const BoxContacts = styled.div``;

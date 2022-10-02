@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Markup = styled.div`
+  width: 500px;
   margin-top: ${props => props.theme.space[5]};
   padding: ${props => props.theme.space[5]};
   background-color: ${p => p.theme.colors.white};

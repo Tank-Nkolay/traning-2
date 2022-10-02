@@ -1,17 +1,17 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import { BoxPhonebook } from './Contacts.styled';
+import { BoxContacts } from './Contacts.styled';
 
-function Contacts({ names }) {
+function Contacts({ contacts }) {
+  console.log(contacts);
   return (
-    <div>
-      <p>tttt</p>
-      {/* {names.map(name => (
+    <BoxContacts>
+      {contacts.map(contact => (
         <ul key={1}>
-          <li>{name}</li>
+          <li>{contact.name}</li>
         </ul>
-      ))} */}
-    </div>
+      ))}
+    </BoxContacts>
   );
 }
 

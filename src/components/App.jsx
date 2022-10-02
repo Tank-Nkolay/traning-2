@@ -35,7 +35,7 @@ export class App extends React.Component {
             onSubmitData={this.formSubmitHandler}
           />
           <Title>Contacts</Title>
-          <Contacts />
+          <Contacts contacts={this.state.contacts} />
         </Markup>
       </Section>
     );
