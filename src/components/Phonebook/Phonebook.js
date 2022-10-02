@@ -2,8 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Section from '../Section/Section';
 // import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
-import Statistics from '../Statistics/Statistics';
-import Notification from '../Notification/Notification';
+// import Statistics from '../Statistics/Statistics';
+// import Notification from '../Notification/Notification';
 import {
   Markup,
   BoxPhonebook,
@@ -16,38 +16,34 @@ import {
 } from './Phonebook.styled.jsx';
 
 class Phonebook extends React.Component {
-  // Передаем стартовое значение ===
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
+    contacts: [],
+    name: '',
   };
 
-  handleIncrimenteGood = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-  handleIncrimenteNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-  handleIncrimenteBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
+  //   метод универсального ввода на две формы
+  handleChange = e => {
+    // таже функция но деструкторизировали
+    const { name, value } = e.currentTarget;
+    this.setState({
+      [name]: value,
+    });
   };
 
-  countTotalFeedback() {
-    return this.state.good + this.state.neutral + this.state.bad;
-  }
+  //   передача данных во внешнее хранилище
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmitData(this.state);
 
-  countPositiveFeedbackPercentage() {
-    return Math.floor((this.state.good / this.countTotalFeedback()) * 100);
-  }
+    // вызов reset
+    this.reset();
+  };
 
-  // {this.state.visible ? 'Скрыть' : 'Показать'}
+  //   функция очистки формы
+  reset = () => {
+    this.setState({ name: '', tag: '' });
+  };
+
   render() {
     return (
       <Markup>
@@ -60,6 +56,9 @@ class Phonebook extends React.Component {
                 <Input
                   name="name"
                   type="text"
+                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+                  required
                   value={this.state.name}
                   onChange={this.handleChange}
                 />
@@ -71,7 +70,7 @@ class Phonebook extends React.Component {
 
         <TitleContacts>Contacts</TitleContacts>
         <Section title="">
-          {this.countTotalFeedback() > '0' ? (
+          {/* {this.countTotalFeedback() > '0' ? (
             <Statistics
               good={this.state.good}
               neutral={this.state.neutral}
@@ -81,7 +80,7 @@ class Phonebook extends React.Component {
             />
           ) : (
             <Notification message="There is no feedback" />
-          )}
+          )} */}
         </Section>
       </Markup>
     );
@@ -90,10 +89,6 @@ class Phonebook extends React.Component {
 
 export default Phonebook;
 
-// ===================================
-// countPositiveFeedbackPercentage() {
-//   return parseInt((this.state.good / this.countTotalFeedback()) * 100);
-// }
 // ===================================
 // ДЕФОЛТНОЕ значение ПРОПС
 //   static defaultProps = {
