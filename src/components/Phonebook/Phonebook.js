@@ -4,9 +4,18 @@ import Section from '../Section/Section';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
 import Notification from '../Notification/Notification';
-import { Markup, Title, TitleStatistics } from './Feedback.styled.jsx';
+import {
+  Markup,
+  BoxPhonebook,
+  Title,
+  TitleContacts,
+  Form,
+  Label,
+  Input,
+  Button,
+} from './Phonebook.styled.jsx';
 
-class Feedback extends React.Component {
+class Phonebook extends React.Component {
   // Передаем стартовое значение ===
   state = {
     good: 0,
@@ -42,16 +51,25 @@ class Feedback extends React.Component {
   render() {
     return (
       <Markup>
-        <Title>Please leave feedback</Title>
+        <Title>Phonebook</Title>
         <Section title="">
-          <FeedbackOptions
-            clickGood={this.handleIncrimenteGood}
-            clickNeutral={this.handleIncrimenteNeutral}
-            clickBad={this.handleIncrimenteBad}
-          />
+          <BoxPhonebook>
+            <Form onSubmit={this.handleSubmit}>
+              <Label>
+                Name
+                <Input
+                  name="name"
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </Label>
+              <Button type="submit">Add contacts</Button>
+            </Form>
+          </BoxPhonebook>
         </Section>
 
-        <TitleStatistics>Statistics</TitleStatistics>
+        <TitleContacts>Contacts</TitleContacts>
         <Section title="">
           {this.countTotalFeedback() > '0' ? (
             <Statistics
@@ -70,7 +88,7 @@ class Feedback extends React.Component {
   }
 }
 
-export default Feedback;
+export default Phonebook;
 
 // ===================================
 // countPositiveFeedbackPercentage() {

@@ -1,6 +1,6 @@
 // импорт функции разметки
 import Section from './Section/Section';
-import Feedback from './Feedback/Feedback';
+import Phonebook from './Phonebook/Phonebook';
 
 export const App = () => {
   return (
@@ -15,7 +15,7 @@ export const App = () => {
       }}
     >
       <Section>
-        <Feedback />
+        <Phonebook />
       </Section>
     </div>
   );
