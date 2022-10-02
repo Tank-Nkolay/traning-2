@@ -32,7 +32,7 @@ class Phonebook extends React.Component {
   // передача данных во внешнее хранилище
   handleSubmit = e => {
     e.preventDefault();
-    // this.props.onSubmitData(this.state);
+    this.props.onSubmitData(this.state);
 
     // вызов reset
     this.reset();
@@ -40,10 +40,11 @@ class Phonebook extends React.Component {
 
   //   функция очистки формы
   reset = () => {
-    this.setState({ name: '', tag: '' });
+    this.setState({ name: '' });
   };
 
   render() {
+    const { name } = this.props;
     return (
       <Markup>
         <Title>Phonebook</Title>
@@ -69,7 +70,9 @@ class Phonebook extends React.Component {
 
         <TitleContacts>Contacts</TitleContacts>
         <Section title="">
-          <Name name={this.state.name} />
+          <ul>
+            <Name names={name} />
+          </ul>
         </Section>
       </Markup>
     );

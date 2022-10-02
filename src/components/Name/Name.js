@@ -1,12 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import { BoxName } from './Name.styled';
+// import { formSubmitHandler } from './formSubmitHandler';
 
-const Name = ({ name }) => (
-  <BoxName>
-    <p>rrrr</p>
-  </BoxName>
-);
+const Name = name => <BoxName key={name}>{1}</BoxName>;
 
 // FeedbackOptions.propTypes = {
 //   clickGood: PropTypes.func.isRequired,
