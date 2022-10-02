@@ -32,7 +32,6 @@ class FormInput extends React.Component {
   };
 
   render() {
-    const { contacts } = this.props;
     return (
       <BoxFormInput>
         <Form onSubmit={this.handleSubmit}>
