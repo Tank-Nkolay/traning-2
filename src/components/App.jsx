@@ -1,6 +1,6 @@
 // импорт функции разметки
 import Section from './Section/Section';
-import Phonebook from './Phonebook/Phonebook';
+import Phonebook from './Phonebook';
 
 export const App = () => {
   return (

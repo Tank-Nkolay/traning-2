@@ -1,9 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import Section from '../Section/Section';
-// import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
-// import Statistics from '../Statistics/Statistics';
-// import Notification from '../Notification/Notification';
+import Name from '../Name';
+
 import {
   Markup,
   BoxPhonebook,
@@ -30,10 +29,10 @@ class Phonebook extends React.Component {
     });
   };
 
-  //   передача данных во внешнее хранилище
+  // передача данных во внешнее хранилище
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmitData(this.state);
+    // this.props.onSubmitData(this.state);
 
     // вызов reset
     this.reset();
@@ -70,17 +69,7 @@ class Phonebook extends React.Component {
 
         <TitleContacts>Contacts</TitleContacts>
         <Section title="">
-          {/* {this.countTotalFeedback() > '0' ? (
-            <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
-            />
-          ) : (
-            <Notification message="There is no feedback" />
-          )} */}
+          <Name name={this.state.name} />
         </Section>
       </Markup>
     );
@@ -98,3 +87,15 @@ export default Phonebook;
 //   //
 // };
 // ===================================
+
+/* {this.countTotalFeedback() > '0' ? (
+<Statistics
+good={this.state.good}
+neutral={this.state.neutral}
+bad={this.state.bad}
+total={this.countTotalFeedback()}
+positivePercentage={this.countPositiveFeedbackPercentage()}
+/>
+) : (
+<Notification message="There is no feedback" />
+)} */
