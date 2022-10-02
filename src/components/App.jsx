@@ -1,7 +1,8 @@
 import React from 'react';
 // импорт функции разметки
 import Section from './Section/Section';
-import Phonebook from './Phonebook';
+import FormInput from './FormInput';
+import { Markup, Title } from './App.styled';
 
 export class App extends React.Component {
   state = {
@@ -26,10 +27,13 @@ export class App extends React.Component {
   render() {
     return (
       <Section>
-        <Phonebook
-          contacts={this.state.contacts}
-          onSubmitData={this.formSubmitHandler}
-        />
+        <Markup>
+          <Title>Phonebook</Title>
+          <FormInput
+            contacts={this.state.contacts}
+            onSubmitData={this.formSubmitHandler}
+          />
+        </Markup>
       </Section>
     );
   }

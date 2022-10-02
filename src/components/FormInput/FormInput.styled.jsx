@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const BoxPhonebook = styled.div`
+export const BoxFormInput = styled.div`
   border: 2px solid;
   margin-top: ${props => props.theme.space[5]};
   margin-bottom: ${props => props.theme.space[5]};
@@ -29,9 +29,4 @@ export const Button = styled.button`
   width: 120px;
   font-size: ${p => p.theme.fontSizes.m};
   cursor: pointer;
-`;
-
-export const TitleContacts = styled.h3`
-  font-size: ${p => p.theme.fontSizes.l};
-  margin-bottom: ${props => props.theme.space[5]};
 `;
