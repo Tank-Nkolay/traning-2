@@ -3,7 +3,6 @@ import React from 'react';
 import { BoxContacts } from './Contacts.styled';
 
 function Contacts({ contacts }) {
-  console.log(contacts);
   return (
     <BoxContacts>
       {contacts.map(contact => (
