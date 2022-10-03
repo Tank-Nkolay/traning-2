@@ -40,8 +40,17 @@ export class App extends React.Component {
     this.setState({ filter: e.currentTarget.value });
   };
 
-  render() {
+  getVisibleContacts = () => {
     const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(normalizedFilter)
+    );
+  };
+
+  render() {
+    const { filter, contacts } = this.state;
+    const visibleContacts = this.getVisibleContacts();
 
     return (
       <Section>
@@ -53,7 +62,7 @@ export class App extends React.Component {
           />
           <Title>Contacts</Title>
           <Filter value={filter} onChange={this.changeFilter} />
-          <Contacts contacts={contacts} />
+          <Contacts contacts={visibleContacts} />
         </Markup>
       </Section>
     );
