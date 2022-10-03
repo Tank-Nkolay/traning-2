@@ -19,13 +19,14 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  margin-top: ${props => props.theme.space[1]};
+  margin-top: ${props => props.theme.space[2]};
+  margin-bottom: ${props => props.theme.space[4]};
   font-size: ${p => p.theme.fontSizes.m};
   padding: ${props => props.theme.space[2]};
 `;
 
 export const Button = styled.button`
-  margin-top: ${props => props.theme.space[5]};
+  margin-top: ${props => props.theme.space[4]};
   width: 120px;
   font-size: ${p => p.theme.fontSizes.m};
   cursor: pointer;

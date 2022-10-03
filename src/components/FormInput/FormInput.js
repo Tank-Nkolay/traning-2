@@ -7,13 +7,15 @@ class FormInput extends React.Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   //   метод универсального ввода на две формы
   handleChange = e => {
-    const { name, value } = e.currentTarget;
+    const { name, number, value } = e.currentTarget;
     this.setState({
       [name]: value,
+      [number]: value,
     });
   };
 
@@ -29,6 +31,7 @@ class FormInput extends React.Component {
   //   функция очистки формы
   reset = () => {
     this.setState({ name: '' });
+    this.setState({ number: '' });
   };
 
   render() {
@@ -44,6 +47,16 @@ class FormInput extends React.Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
               value={this.state.name}
+              onChange={this.handleChange}
+            />
+            Number
+            <Input
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              value={this.state.number}
               onChange={this.handleChange}
             />
           </Label>

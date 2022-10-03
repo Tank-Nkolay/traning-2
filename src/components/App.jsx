@@ -10,17 +10,20 @@ export class App extends React.Component {
   state = {
     contacts: [],
     name: '',
+    number: '',
   };
 
   formSubmitHandler = data => {
-    const { name } = data;
+    const { name, number } = data;
     this.addContacts(name);
+    this.addContacts(number);
   };
 
-  addContacts = name => {
+  addContacts = (name, number) => {
     const contact = {
       id: nanoid(),
       name,
+      number,
     };
     this.setState(({ contacts }) => ({
       contacts: [contact, ...contacts],
