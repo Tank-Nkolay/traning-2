@@ -1,12 +1,14 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { BoxContacts } from './Contacts.styled';
+import { BoxContacts, Li } from './Contacts.styled';
 
 function Contacts({ contacts }) {
   return (
     <BoxContacts>
       {contacts.map(contact => (
-        <li key={contact.id}>{contact.name}</li>
+        <Li key={contact.id}>
+          {contact.name}: {contact.number}
+        </Li>
       ))}
     </BoxContacts>
   );

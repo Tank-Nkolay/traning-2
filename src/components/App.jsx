@@ -15,8 +15,7 @@ export class App extends React.Component {
 
   formSubmitHandler = data => {
     const { name, number } = data;
-    this.addContacts(name);
-    this.addContacts(number);
+    this.addContacts(name, number);
   };
 
   addContacts = (name, number) => {
