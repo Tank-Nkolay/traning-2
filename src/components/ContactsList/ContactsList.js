@@ -1,8 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import { BoxContacts, Li } from './Contacts.styled';
+import { BoxContacts, Li } from './ContactsList.styled';
 
-function Contacts({ contacts }) {
+function ContactsList({ contacts }) {
   return (
     <BoxContacts>
       {contacts.map(contact => (
@@ -14,7 +14,7 @@ function Contacts({ contacts }) {
   );
 }
 
-export default Contacts;
+export default ContactsList;
 
 // FeedbackOptions.propTypes = {
 //   clickGood: PropTypes.func.isRequired,

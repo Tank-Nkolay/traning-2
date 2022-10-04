@@ -2,8 +2,8 @@ import React from 'react';
 import { nanoid } from 'nanoid';
 // импорт функции разметки
 import Section from './Section/Section';
-import FormInput from './FormInput';
-import Contacts from './Contacts';
+import ContactsForm from './ContactsForm';
+import ContactsList from './ContactsList';
 import Filter from './Filter';
 import { Markup, Title } from './App.styled';
 
@@ -56,13 +56,13 @@ export class App extends React.Component {
       <Section>
         <Markup>
           <Title>Phonebook</Title>
-          <FormInput
+          <ContactsForm
             contacts={contacts}
             onSubmitData={this.formSubmitHandler}
           />
           <Title>Contacts</Title>
           <Filter value={filter} onChange={this.changeFilter} />
-          <Contacts contacts={visibleContacts} />
+          <ContactsList contacts={visibleContacts} />
         </Markup>
       </Section>
     );

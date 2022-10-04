@@ -1,9 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-import { BoxFormInput, Form, Label, Input, Button } from './FormInput.styled';
+import { BoxFormInput, Form, Label, Input, Button } from './ContactsForm.styled';
 
-class FormInput extends React.Component {
+class ContactsForm extends React.Component {
   state = {
     contacts: [],
     name: '',
@@ -67,7 +67,7 @@ class FormInput extends React.Component {
   }
 }
 
-export default FormInput;
+export default ContactsForm;
 
 // ===================================
 // ДЕФОЛТНОЕ значение ПРОПС
