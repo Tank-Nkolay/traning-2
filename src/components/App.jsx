@@ -5,7 +5,7 @@ import Section from './Section/Section';
 import ContactsForm from './ContactsForm';
 import ContactsList from './ContactsList';
 import Filter from './Filter';
-import { Markup, Title } from './App.styled';
+import { Markup, MainTitle, Title } from './App.styled';
 
 export class App extends React.Component {
   state = {
@@ -16,8 +16,8 @@ export class App extends React.Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
+    // name: '',
+    // number: '',
   };
 
   formSubmitHandler = data => {
@@ -55,7 +55,7 @@ export class App extends React.Component {
     return (
       <Section>
         <Markup>
-          <Title>Phonebook</Title>
+          <MainTitle>Phonebook</MainTitle>
           <ContactsForm
             contacts={contacts}
             onSubmitData={this.formSubmitHandler}
