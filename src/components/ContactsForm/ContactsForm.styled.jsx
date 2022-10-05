@@ -5,6 +5,7 @@ export const ErrorText = styled.div`
   position: absolute;
   margin-top: ${props => props.theme.space[6]};
   font-size: ${p => p.theme.fontSizes.m};
+  width: 450px;
 `;
 
 export const BoxFormInput = styled.div`
