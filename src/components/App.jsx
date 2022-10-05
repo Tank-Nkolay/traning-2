@@ -43,8 +43,6 @@ export class App extends React.Component {
     this.addContacts(name, number);
   };
 
-  // ====================================
-
   addContacts = (name, number) => {
     const contact = {
       id: nanoid(),
@@ -55,6 +53,7 @@ export class App extends React.Component {
       contacts: [contact, ...contacts],
     }));
   };
+  // ====================================
 
   deleteContact = id => {
     this.setState(prevState => ({

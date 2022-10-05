@@ -115,12 +115,12 @@ export default ContactsForm;
 //   );
 // };
 
-// const ContactsForm = ({ onSubmit }) => {
+// function ContactsForm({ onSubmit }) {
 //   const handleSubmit = (values, { resetForm }) => {
 //     onSubmit(values);
 //     resetForm();
 //   };
-
+//   // console.log(onSubmit);
 //   return (
 //     <BoxFormInput>
 //       <Formik
@@ -128,7 +128,7 @@ export default ContactsForm;
 //         validationSchema={schema}
 //         onSubmit={handleSubmit}
 //       >
-//         <Form>
+//         <Form autoComplete="off">
 //           <Label>
 //             Name
 //             <Input name="name" type="text" autoComplete="off" />
@@ -144,11 +144,11 @@ export default ContactsForm;
 //       </Formik>
 //     </BoxFormInput>
 //   );
-// };
+// }
 
-// ContactsForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+// // ContactsForm.propTypes = {
+// //   onSubmit: PropTypes.func.isRequired,
+// // };
 
 // export default ContactsForm;
 
