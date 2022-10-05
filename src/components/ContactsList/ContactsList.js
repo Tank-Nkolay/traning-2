@@ -1,13 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { BoxContacts, Li } from './ContactsList.styled';
 
-function ContactsList({ contacts }) {
+function ContactsList({ contacts, onDeleteContact }) {
   return (
     <BoxContacts>
       {contacts.map(contact => (
         <Li key={contact.id}>
           {contact.name}: {contact.number}
+          <button type="button" onClick={() => onDeleteContact(contact.id)}>
+            Delete
+          </button>
         </Li>
       ))}
     </BoxContacts>
@@ -16,8 +19,7 @@ function ContactsList({ contacts }) {
 
 export default ContactsList;
 
-// FeedbackOptions.propTypes = {
-//   clickGood: PropTypes.func.isRequired,
-//   clickNeutral: PropTypes.func.isRequired,
-//   clickBad: PropTypes.func.isRequired,
-// };
+ContactsList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};
