@@ -1,6 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import Notiflix from 'npm i notiflix';
+import Notiflix from 'notiflix';
 // импорт функции разметки
 import Section from './Section/Section';
 import ContactsForm from './ContactsForm';
