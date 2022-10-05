@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 
 export const ErrorText = styled.div`
-  color: red;
+  color: ${props => props.theme.colors.red};
+  position: absolute;
+  margin-top: ${props => props.theme.space[6]};
+  font-size: ${p => p.theme.fontSizes.m};
 `;
 
 export const BoxFormInput = styled.div`
@@ -20,6 +23,7 @@ export const Label = styled.label`
   display: flex;
   flex-direction: column;
   font-size: ${p => p.theme.fontSizes.mm};
+  margin-bottom: ${props => props.theme.space[5]};
 `;
 
 // export const Input = styled.input`
@@ -30,7 +34,7 @@ export const Label = styled.label`
 // `;
 
 export const Button = styled.button`
-  width: 120px;
+  width: ${props => props.theme.space[7]};
   font-size: ${p => p.theme.fontSizes.m};
   cursor: pointer;
 `;
