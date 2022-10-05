@@ -59,12 +59,22 @@ function ContactsForm({ onSubmit }) {
         <Form autoComplete="off">
           <Label>
             Name
-            <Field name="name" type="text" autoComplete="off" />
+            <Field
+              name="name"
+              type="text"
+              autoComplete="off"
+              placeholder="Enter name"
+            />
             <FormError name="name" />
           </Label>
           <Label>
             Number
-            <Field type="tel" name="number" autoComplete="off" />
+            <Field
+              type="tel"
+              name="number"
+              autoComplete="off"
+              placeholder="Enter phone"
+            />
             <FormError name="number" />
           </Label>
           <Button type="submit">Add contacts</Button>
