@@ -1,0 +1,9 @@
+.field {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.field::placeholder {
+  color: gray;
+  font-size: 16px;
+}

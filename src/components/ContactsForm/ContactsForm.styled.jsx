@@ -9,10 +9,10 @@ export const BoxFormInput = styled.div`
   padding: ${props => props.theme.space[4]};
 `;
 
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
+// export const Form = styled.form`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 export const Label = styled.label`
   display: flex;
@@ -20,15 +20,14 @@ export const Label = styled.label`
   font-size: ${p => p.theme.fontSizes.mm};
 `;
 
-export const Input = styled.input`
-  margin-top: ${props => props.theme.space[2]};
-  margin-bottom: ${props => props.theme.space[4]};
-  font-size: ${p => p.theme.fontSizes.m};
-  padding: ${props => props.theme.space[2]};
-`;
+// export const Input = styled.input`
+//   margin-top: ${props => props.theme.space[2]};
+//   margin-bottom: ${props => props.theme.space[4]};
+//   font-size: ${p => p.theme.fontSizes.m};
+//   padding: ${props => props.theme.space[2]};
+// `;
 
 export const Button = styled.button`
-  margin-top: ${props => props.theme.space[4]};
   width: 120px;
   font-size: ${p => p.theme.fontSizes.m};
   cursor: pointer;

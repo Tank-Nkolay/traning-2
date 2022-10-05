@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, ErrorMessage, Field, Form } from 'formik';
 import * as yup from 'yup';
 // import PropTypes from 'prop-types';
+import css from './ContactsForm.module.css';
 import {
   ErrorText,
   BoxFormInput,
@@ -60,6 +61,7 @@ function ContactsForm({ onSubmit }) {
           <Label>
             Name
             <Field
+              className={css.field}
               name="name"
               type="text"
               autoComplete="off"
@@ -70,6 +72,7 @@ function ContactsForm({ onSubmit }) {
           <Label>
             Number
             <Field
+              className={css.field}
               type="tel"
               name="number"
               autoComplete="off"
