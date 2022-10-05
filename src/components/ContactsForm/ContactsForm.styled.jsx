@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+export const ErrorText = styled.div``;
+
 export const BoxFormInput = styled.div`
   border: 2px solid;
   margin-top: ${props => props.theme.space[5]};

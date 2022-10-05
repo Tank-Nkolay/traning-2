@@ -1,14 +1,19 @@
 import React from 'react';
-import { Formik } from 'formik';
-// import PropTypes from 'prop-types';
-
+import { Formik, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import PropTypes from 'prop-types';
 import {
+  ErrorText,
   BoxFormInput,
   Form,
   Label,
   Input,
   Button,
 } from './ContactsForm.styled';
+
+// ========================================================================
+// ВАРИАНТ БЕЗ FORMIK
+// ========================================================================
 
 class ContactsForm extends React.Component {
   state = {
@@ -29,7 +34,7 @@ class ContactsForm extends React.Component {
   // передача данных во внешнее хранилище
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmitData(this.state);
+    this.props.onSubmit(this.state);
 
     // вызов reset
     this.reset();
@@ -75,9 +80,78 @@ class ContactsForm extends React.Component {
     );
   }
 }
-
 export default ContactsForm;
 
+// ========================================================================
+// ВАРИАНТ c FORMIK (пока не работает)
+// ========================================================================
+
+// let schema = yup.object().shape({
+//   name: yup
+//     .string()
+//     .matches(
+//       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
+//       'Name may contain only letters, apostrophe, dash and spaces without spaces at the beginning and end of the name'
+//     )
+//     .required('This field is required'),
+//   number: yup
+//     .string()
+//     .matches(
+//       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
+//       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+//     )
+//     .required('This field is required'),
+// });
+
+// const FormError = ({ name }) => {
+//   return (
+//     <ErrorMessage
+//       name={name}
+//       render={message => {
+//         return <ErrorText>{message}</ErrorText>;
+//       }}
+//     />
+//   );
+// };
+
+// const ContactsForm = ({ onSubmit }) => {
+//   const handleSubmit = (values, { resetForm }) => {
+//     onSubmit(values);
+//     resetForm();
+//   };
+
+//   return (
+//     <BoxFormInput>
+//       <Formik
+//         initialValues={{ name: '', number: '' }}
+//         validationSchema={schema}
+//         onSubmit={handleSubmit}
+//       >
+//         <Form>
+//           <Label>
+//             Name
+//             <Input name="name" type="text" autoComplete="off" />
+//             <FormError name="name" />
+//           </Label>
+//           <Label>
+//             Number
+//             <Input type="tel" name="number" autoComplete="off" />
+//             <FormError name="number" />
+//           </Label>
+//           <Button type="submit">Add contacts</Button>
+//         </Form>
+//       </Formik>
+//     </BoxFormInput>
+//   );
+// };
+
+// ContactsForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+// };
+
+// export default ContactsForm;
+
+// ===================================
 // ===================================
 // ДЕФОЛТНОЕ значение ПРОПС
 //   static defaultProps = {

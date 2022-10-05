@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import Notiflix from 'npm i notiflix';
 // импорт функции разметки
 import Section from './Section/Section';
 import ContactsForm from './ContactsForm';
@@ -22,7 +23,13 @@ export class App extends React.Component {
 
   formSubmitHandler = data => {
     const { name, number } = data;
+    // console.log(data);
     this.addContacts(name, number);
+    const normalizedName = name.toLowerCase();
+    if (this.findContactByName(normalizedName)) {
+      Notiflix.Notify.warning(`${name} is already in contacts`);
+      return;
+    }
   };
 
   addContacts = (name, number) => {
@@ -49,17 +56,14 @@ export class App extends React.Component {
   };
 
   render() {
-    const { filter, contacts } = this.state;
+    const { filter } = this.state;
     const visibleContacts = this.getVisibleContacts();
 
     return (
       <Section>
         <Markup>
           <MainTitle>Phonebook</MainTitle>
-          <ContactsForm
-            contacts={contacts}
-            onSubmitData={this.formSubmitHandler}
-          />
+          <ContactsForm onSubmit={this.formSubmitHandler} />
           <Title>Contacts</Title>
           <Filter value={filter} onChange={this.changeFilter} />
           <ContactsList contacts={visibleContacts} />
