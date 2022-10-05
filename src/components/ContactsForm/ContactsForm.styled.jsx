@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-export const ErrorText = styled.div``;
+export const ErrorText = styled.div`
+  color: red;
+`;
 
 export const BoxFormInput = styled.div`
   border: 2px solid;

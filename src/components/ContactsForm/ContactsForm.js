@@ -67,7 +67,7 @@ function ContactsForm({ onSubmit }) {
               autoComplete="off"
               placeholder="Enter name"
             />
-            <FormError name="name" />
+            <FormError className={css.formError} name="name" />
           </Label>
           <Label>
             Number
@@ -78,7 +78,7 @@ function ContactsForm({ onSubmit }) {
               autoComplete="off"
               placeholder="Enter phone"
             />
-            <FormError name="number" />
+            <FormError className={css.formError} name="number" />
           </Label>
           <Button type="submit">Add contacts</Button>
         </Form>
