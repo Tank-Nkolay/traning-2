@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, ErrorMessage, Field, Form } from 'formik';
 import * as yup from 'yup';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import css from './ContactsForm.module.css';
 import {
   ErrorText,
@@ -87,9 +87,9 @@ function ContactsForm({ onSubmit }) {
   );
 }
 
-// ContactsForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };
+ContactsForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default ContactsForm;
 
