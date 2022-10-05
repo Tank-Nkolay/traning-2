@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Formik, ErrorMessage } from 'formik';
 // import * as yup from 'yup';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   // ErrorText,
   BoxFormInput,
@@ -80,10 +80,6 @@ class ContactsForm extends React.Component {
     );
   }
 }
-
-ContactsForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default ContactsForm;
 

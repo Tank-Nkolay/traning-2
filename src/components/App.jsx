@@ -21,16 +21,29 @@ export class App extends React.Component {
     // number: '',
   };
 
+  // ====================================
+
+  findContactByName = name => {
+    const { contacts } = this.state;
+    return contacts.find(item => item.name.toLowerCase() === name);
+  };
+
   formSubmitHandler = data => {
     const { name, number } = data;
     // console.log(data);
-    this.addContacts(name, number);
     const normalizedName = name.toLowerCase();
     if (this.findContactByName(normalizedName)) {
-      Notiflix.Notify.warning(`${name} is already in contacts`);
+      Notiflix.Notify.warning(`${name} is already in contacts`, {
+        position: 'center-top',
+        width: '500px',
+        fontSize: '32px',
+      });
       return;
     }
+    this.addContacts(name, number);
   };
+
+  // ====================================
 
   addContacts = (name, number) => {
     const contact = {
