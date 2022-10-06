@@ -1,6 +1,8 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 import Notiflix from 'notiflix';
+// глобальные стили
+import GlobalStyles from './GlobalStyles';
 // импорт функции разметки
 import Section from './Section/Section';
 import ContactsForm from './ContactsForm';
@@ -79,6 +81,7 @@ export class App extends React.Component {
 
     return (
       <Section>
+        <GlobalStyles />
         <Markup>
           <MainTitle>Phonebook</MainTitle>
           <ContactsForm onSubmit={this.formSubmitHandler} />

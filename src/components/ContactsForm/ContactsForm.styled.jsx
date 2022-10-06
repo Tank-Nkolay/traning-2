@@ -37,5 +37,4 @@ export const Label = styled.label`
 export const Button = styled.button`
   width: ${props => props.theme.space[7]};
   font-size: ${p => p.theme.fontSizes.m};
-  cursor: pointer;
 `;
