@@ -10,6 +10,9 @@ import ContactsList from './ContactsList';
 import Filter from './Filter';
 import { Markup, MainTitle, Title } from './App.styled';
 
+// константа локал сторедж
+const LS_KEY = 'contacts';
+
 export class App extends React.Component {
   state = {
     contacts: [
@@ -22,6 +25,24 @@ export class App extends React.Component {
     // name: '',
     // number: '',
   };
+
+  // ====================================
+  //   получаем значение записанное в локал сторедж
+  // JSON.parse - чтобы декодировать JSON-строку
+  componentDidMount() {
+    const savedState = localStorage.getItem(LS_KEY);
+    const parsedContacts = JSON.parse(savedState);
+
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+  //   записываем в локал сторедж по условию
+  componentDidUpdate(_, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem(LS_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   // ====================================
 
