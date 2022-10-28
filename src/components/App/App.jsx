@@ -12,20 +12,24 @@ import { Markup, MainTitle, Title } from './App.styled';
 import { useLocalSrorage } from '../hooks/useLocalStorage';
 
 // константа локал сторедж
-// const LS_KEY = 'contacts';
+const LS_KEY = 'contacts';
 
 export default function App() {
-  const [contacts, setContacts] = useLocalSrorage('contacts', []);
+  const [contacts, setContacts] = useLocalSrorage(LS_KEY, []);
   const [filter, setFilter] = useState('');
 
-  const formSubmitHandler = ({ name, number }) => {
+  const handleFormSubmit = ({ name, number }) => {
     // console.log(name, number);
     const normalizedName = name.toLowerCase();
-    if (findDuplicateName(normalizedName)) {
+    if (findContactByName(normalizedName)) {
       Notiflix.Notify.info(`${name} is already in your contacts`);
       return;
     }
     addContact(name, number);
+  };
+
+  const findContactByName = name => {
+    return contacts.find(item => item.name.toLowerCase() === name);
   };
 
   const addContact = (name, number) => {
@@ -41,19 +45,15 @@ export default function App() {
     setContacts(contacts => contacts.filter(contact => contact.id !== id));
   };
 
-  const visibleContacts = () => {
+  const filteredContacts = () => {
     const normFilter = filter.toLowerCase();
     return contacts.filter(({ name }) =>
       name.toLowerCase().includes(normFilter)
     );
   };
 
-  const changeFilter = event => {
+  const onFilterChange = event => {
     setFilter(event.currentTarget.value);
-  };
-
-  const findDuplicateName = name => {
-    return contacts.find(item => item.name.toLowerCase() === name);
   };
 
   return (
@@ -61,13 +61,14 @@ export default function App() {
       <GlobalStyles />
       <Markup>
         <MainTitle>Phonebook</MainTitle>
-        <ContactsForm onSubmit={formSubmitHandler} />
-        <Title>Contacts</Title>
-        <Filter value={filter} onChange={changeFilter} />
-        <ContactsList
-          contacts={visibleContacts}
-          onDeleteContact={deleteContact}
-        />
+        <ContactsForm onSubmit={handleFormSubmit} />
+        <Filter filter={filter} onChange={onFilterChange} />
+        {contacts.length > 0 && (
+          <ContactsList
+            contacts={filteredContacts()}
+            onDeleteContact={deleteContact}
+          />
+        )}
       </Markup>
     </Section>
   );
@@ -114,7 +115,7 @@ export default function App() {
 //     return contacts.find(item => item.name.toLowerCase() === name);
 //   };
 
-//   formSubmitHandler = data => {
+//   handleFormSubmit = data => {
 //     const { name, number } = data;
 //     // console.log(data);
 //     const normalizedName = name.toLowerCase();
@@ -168,7 +169,7 @@ export default function App() {
 //         <GlobalStyles />
 //         <Markup>
 //           <MainTitle>Phonebook</MainTitle>
-//           <ContactsForm onSubmit={this.formSubmitHandler} />
+//           <ContactsForm onSubmit={this.handleFormSubmit} />
 //           <Title>Contacts</Title>
 //           <Filter value={filter} onChange={this.changeFilter} />
 //           <ContactsList
