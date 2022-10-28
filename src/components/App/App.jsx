@@ -62,6 +62,7 @@ export default function App() {
       <Markup>
         <MainTitle>Phonebook</MainTitle>
         <ContactsForm onSubmit={handleFormSubmit} />
+        <Title>Contacts</Title>
         <Filter filter={filter} onChange={onFilterChange} />
         {contacts.length > 0 && (
           <ContactsList
