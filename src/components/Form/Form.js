@@ -11,9 +11,9 @@ let schema = yup.object().shape({
     .string()
     .matches(
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-      "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+      '``Name may contain only letters, apostrophe, dash and spaces without spaces at the beginning and end of the name'
     )
-    .required('Please, enter name'),
+    .required('``This field is required'),
   number: yup
     .string()
     .min(6)
@@ -25,18 +25,11 @@ let schema = yup.object().shape({
     .required('Please, enter correct number'),
 });
 
-const initialValues = {
-  name: '',
-  number: '',
-};
-
 export default function FormEl() {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
   const handleSubmit = (values, { resetForm }) => {
-    // const { name } = values;
-
     const findDuplicateName = (contacts, newName) => {
       return contacts.find(({ name }) => name.toLowerCase() === newName);
     };
@@ -48,14 +41,13 @@ export default function FormEl() {
     }
 
     dispatch(addContact(values));
-
     resetForm();
   };
 
   return (
     <>
       <Formik
-        initialValues={initialValues}
+        initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
         validationSchema={schema}
       >
