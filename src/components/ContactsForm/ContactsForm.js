@@ -22,7 +22,7 @@ let schema = yup.object().shape({
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
     )
-    .required('Please, enter correct number'),
+    .required('``Please, enter correct number'),
 });
 
 export default function FormEl() {
