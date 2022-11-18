@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-import { FormBook, Input, Label, Btn, Error } from './Form.styled';
+import { FormBook, Input, Label, Btn, Error } from './ContactsForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
