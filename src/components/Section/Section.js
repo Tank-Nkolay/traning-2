@@ -6,6 +6,7 @@ function Section({ title, children }) {
     <div
       style={{
         // height: '100vh',
+        marginTop: '20px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
