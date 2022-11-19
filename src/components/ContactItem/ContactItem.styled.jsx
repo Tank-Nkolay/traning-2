@@ -13,6 +13,7 @@ export const Li = styled.li`
 
 export const Button = styled.button`
   background-color: #f5f2f2;
+  padding: 5px 10px 5px 10px;
   cursor: pointer;
   &:hover,
   &:focus {

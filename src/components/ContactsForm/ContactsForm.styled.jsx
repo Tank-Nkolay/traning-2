@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Form, Field, ErrorMessage } from 'formik';
 
 export const FormBook = styled(Form)`
-  border: 2px solid;
+  border: 1px solid;
   margin-top: 20px;
   padding: 20px 10px;
   font-size: 24px;
