@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contactsSlice';
-import { Item, CloseBtn } from './ContactItem.styled';
+import { Li, Button } from './ContactItem.styled';
 
 export default function ContactItem({ id, name, number }) {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <Item>
+    <Li>
       {name}:{number}
-      <CloseBtn type="button" onClick={handleDelete}>
-        delete
-      </CloseBtn>
-    </Item>
+      <Button type="button" onClick={handleDelete}>
+        Delete
+      </Button>
+    </Li>
   );
 }
 

@@ -12,7 +12,7 @@ export default function App() {
         <Title title="Phonebook" />
         <FormEl />
         <Filter title="Find contacts by name" />
-        <ContactList title="Contacts" />
+        <ContactList />
       </Markup>
     </Section>
   );
