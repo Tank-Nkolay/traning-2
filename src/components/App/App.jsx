@@ -1,12 +1,16 @@
-import { MainBox } from './App.styled';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// ======================================================
+import Section from '../../Section/Section';
+import { Markup } from './App.styled';
+// ======================================================
 import FormEl from 'components/Form/Form';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter';
 import Title from 'components/Title/Title';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../../redux/operations';
 import { getError, getIsLoading } from 'redux/selectors';
+// ======================================================
 
 export default function App() {
   const dispatch = useDispatch();
@@ -18,12 +22,14 @@ export default function App() {
   }, [dispatch]);
 
   return (
-    <MainBox>
-      <Title title="Phonebook" />
-      <FormEl />
-      <Filter title="Find contacts by name" />
-      {isLoading && !error && <b>Request in progress...</b>}
-      <ContactList title="Contacts" />
-    </MainBox>
+    <Section>
+      <Markup>
+        <Title title="Phonebook" />
+        <FormEl />
+        <Filter title="Find contacts by name" />
+        {isLoading && !error && <b>Request in progress...</b>}
+        <ContactList title="Contacts" />
+      </Markup>
+    </Section>
   );
 }

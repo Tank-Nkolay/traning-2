@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-export const MainBox = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f6f6f6;
-
-  max-width: 500px;
+export const Markup = styled.div`
+  width: 500px;
+  padding: 32px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  margin-bottom: 50px;
-  box-shadow: 3px 3px 3px lightgrey;
 `;
