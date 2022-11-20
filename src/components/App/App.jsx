@@ -28,7 +28,7 @@ export default function App() {
         <FormEl />
         <Filter title="Find contacts by name" />
         {isLoading && !error && <b>Request in progress...</b>}
-        <ContactList title="Contacts" />
+        <ContactList />
       </Markup>
     </Section>
   );
