@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
+import { FindWrapper, FindTitle, Input } from './Filter.styled';
 import { useSelector, useDispatch } from 'react-redux';
-import { Container, Title, Input } from './Filter.styled';
 import { setFilter } from 'redux/filterSlice';
 import { getFilter } from 'redux/selectors';
 
@@ -12,16 +12,16 @@ export default function Filter({ title }) {
     dispatch(setFilter(event.currentTarget.value));
   };
   return (
-    <Container>
-      <Title>Contacts</Title>
+    <FindWrapper>
+      <FindTitle>{title}</FindTitle>
       <Input
         type="text"
         name="filter"
-        placeholder="Find contacts by name"
+        placeholder="Enter search name"
         value={filter.value}
         onChange={onFilterChange}
       />
-    </Container>
+    </FindWrapper>
   );
 }
 

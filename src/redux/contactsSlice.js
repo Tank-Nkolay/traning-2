@@ -1,38 +1,57 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { persistReducer } from 'redux-persist';
-import contacts from '../data/contacts.json';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
+import { fetchContacts, addContact, deleteContact } from './operations';
 
-const contactsInitialState = {
-  contactList: [...contacts],
+const extraActions = [fetchContacts, addContact, deleteContact];
+
+const getActionsWithType = type =>
+  extraActions.map(extraAction => extraAction[type]);
+// ...extraActions.map(extraAction => extraAction.pending)
+
+const handleFetchContactsReducer = (state, action) => {
+  state.items = action.payload;
+};
+const handleAddContactReducer = (state, action) => {
+  state.items.push(action.payload);
+};
+const handleDeleteContactReducer = (state, action) => {
+  const index = state.items.findIndex(
+    contact => contact.id === action.payload.id
+  );
+  state.items.splice(index, 1);
 };
 
+const anyFulfielledReducer = state => {
+  state.isLoading = false;
+  state.error = null;
+};
+const anyPendingReducer = state => {
+  state.isLoading = true;
+};
+const anyRejectedReducer = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 const contactsSlice = createSlice({
   name: 'contacts',
-  initialState: contactsInitialState,
-  reducers: {
-    addContact(state, action) {
-      state.contactList.push({ ...action.payload, id: nanoid() });
-    },
-
-    deleteContact(state, action) {
-      const index = state.contactList.findIndex(
-        contact => contact.id === action.payload
-      );
-      state.contactList.splice(index, 1);
-    },
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
   },
+  extraReducers: builder =>
+    builder
+      .addCase(fetchContacts.fulfilled, handleFetchContactsReducer)
+      .addCase(addContact.fulfilled, handleAddContactReducer)
+      .addCase(deleteContact.fulfilled, handleDeleteContactReducer)
+      .addMatcher(
+        isAnyOf(...getActionsWithType('fulfilled')),
+        anyFulfielledReducer
+      )
+      .addMatcher(isAnyOf(...getActionsWithType('pending')), anyPendingReducer)
+      .addMatcher(
+        isAnyOf(...getActionsWithType('rejected')),
+        anyRejectedReducer
+      ),
 });
 
-const persistConfig = {
-  key: 'root',
-  storage,
-};
-
-export const contactsReducer = persistReducer(
-  persistConfig,
-  contactsSlice.reducer
-);
-
-// Экспортируем генераторы экшенов и редюсер
-export const { contactList, addContact, deleteContact } = contactsSlice.actions;
+export const contactsReducer = contactsSlice.reducer;

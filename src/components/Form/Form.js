@@ -1,9 +1,9 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-import { FormBook, Input, Label, Btn, Error } from './ContactsForm.styled';
+import { FormBook, Input, Label, Btn, Error } from './Form.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 
 let schema = yup.object().shape({
@@ -11,9 +11,9 @@ let schema = yup.object().shape({
     .string()
     .matches(
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-      '``Name may contain only letters, apostrophe, dash and spaces without spaces at the beginning and end of the name'
+      "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
     )
-    .required('``This field is required'),
+    .required('Please, enter name'),
   number: yup
     .string()
     .min(6)
@@ -22,8 +22,13 @@ let schema = yup.object().shape({
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
       'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
     )
-    .required('``Please, enter correct number'),
+    .required('Please, enter correct number'),
 });
+
+const initialValues = {
+  name: '',
+  number: '',
+};
 
 export default function FormEl() {
   const dispatch = useDispatch();
@@ -35,7 +40,7 @@ export default function FormEl() {
     };
     const { name } = values;
     const nameToRegistr = name.toLowerCase();
-    if (findDuplicateName(contacts.contactList, nameToRegistr)) {
+    if (findDuplicateName(contacts.items, nameToRegistr)) {
       Notiflix.Notify.info(`${name} is already in your contacts`);
       return;
     }
@@ -47,7 +52,7 @@ export default function FormEl() {
   return (
     <>
       <Formik
-        initialValues={{ name: '', number: '' }}
+        initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={schema}
       >

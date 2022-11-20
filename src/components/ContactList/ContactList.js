@@ -1,31 +1,37 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { Container, ContactWrapper } from './ContactList.styled';
+import {
+  ContactSection,
+  ContactTitle,
+  ContactWrapper,
+} from './ContactList.styled';
 import Item from 'components/ContactItem/ContactItem';
 import { getContacts, getFilter } from 'redux/selectors';
 
-export default function ContactList() {
+export default function ContactList({ title }) {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
 
   const normFilter = filter.value.toLowerCase();
 
-  const filteredContacts = contacts.contactList.filter(({ name }) =>
+  const filteredContacts = contacts.items.filter(({ name }) =>
     name?.toLowerCase()?.includes(normFilter)
   );
 
   return (
-    <Container>
-      {contacts.contactList.length > 0 && (
+    <ContactSection>
+      {contacts.items.length > 0 && (
         <>
+          <ContactTitle>{title}</ContactTitle>
+
           <ContactWrapper>
-            {filteredContacts.map(({ id, name, number }) => (
-              <Item key={id} id={id} name={name} number={number} />
+            {filteredContacts.map(({ id, name, phone }) => (
+              <Item key={id} id={id} name={name} phone={phone} />
             ))}
           </ContactWrapper>
         </>
       )}
-    </Container>
+    </ContactSection>
   );
 }
 
