@@ -9,7 +9,7 @@ export default function ContactItem({ id, name, number }) {
 
   return (
     <Li>
-      {name}:{number}
+      {name}: {number}
       <Button type="button" onClick={handleDelete}>
         Delete
       </Button>

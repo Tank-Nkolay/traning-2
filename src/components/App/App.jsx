@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Section from '../../Section/Section';
 import { Markup } from './App.styled';
 // ======================================================
-import FormEl from 'components/Form/Form';
+import FormEl from 'components/ContactsForm/ContactsForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter';
 import Title from 'components/Title/Title';

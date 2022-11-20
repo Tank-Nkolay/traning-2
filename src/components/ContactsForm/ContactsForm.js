@@ -1,7 +1,7 @@
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Notiflix from 'notiflix';
-import { FormBook, Input, Label, Btn, Error } from './Form.styled';
+import { FormBook, Input, Label, Btn, Error } from './ContactsForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
@@ -11,7 +11,7 @@ let schema = yup.object().shape({
     .string()
     .matches(
       /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/,
-      "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+      '``Name may contain only letters, apostrophe, dash and spaces without spaces at the beginning and end of the name'
     )
     .required('Please, enter name'),
   number: yup
@@ -20,15 +20,10 @@ let schema = yup.object().shape({
     .max(16)
     .matches(
       /\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}/,
-      'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
+      '``Phone number must be digits and can contain spaces, dashes, parentheses and can start with +'
     )
-    .required('Please, enter correct number'),
+    .required('``Please, enter correct number'),
 });
-
-const initialValues = {
-  name: '',
-  number: '',
-};
 
 export default function FormEl() {
   const dispatch = useDispatch();
@@ -52,7 +47,10 @@ export default function FormEl() {
   return (
     <>
       <Formik
-        initialValues={initialValues}
+        initialValues={{
+          name: '',
+          number: '',
+        }}
         onSubmit={handleSubmit}
         validationSchema={schema}
       >
