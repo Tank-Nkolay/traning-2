@@ -30,7 +30,6 @@ export default function ContactList({ title }) {
 }
 
 ContactList.propTypes = {
-  title: PropTypes.string.isRequired,
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
