@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import {
-  ContactSection,
-  ContactTitle,
-  ContactWrapper,
-} from './ContactList.styled';
+import { Container, ContactWrapper } from './ContactList.styled';
 import Item from 'components/ContactItem/ContactItem';
 import { getContacts, getFilter } from 'redux/selectors';
 
@@ -19,11 +15,9 @@ export default function ContactList({ title }) {
   );
 
   return (
-    <ContactSection>
+    <Container>
       {contacts.items.length > 0 && (
         <>
-          <ContactTitle>{title}</ContactTitle>
-
           <ContactWrapper>
             {filteredContacts.map(({ id, name, number }) => (
               <Item key={id} id={id} name={name} number={number} />
@@ -31,7 +25,7 @@ export default function ContactList({ title }) {
           </ContactWrapper>
         </>
       )}
-    </ContactSection>
+    </Container>
   );
 }
 
