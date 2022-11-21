@@ -27,7 +27,7 @@ export default function App() {
         <Title title="Phonebook" />
         <FormEl />
         <Filter title="Find contacts by name" />
-        {isLoading && !error && <b>Request in progress...</b>}
+        {isLoading && !error && <p>Is loading...</p>}
         <ContactList />
       </Markup>
     </Section>
