@@ -10,6 +10,7 @@ import Filter from 'components/Filter';
 import Title from 'components/Title/Title';
 import { fetchContacts } from '../../redux/operations';
 import { getError, getIsLoading } from 'redux/selectors';
+import Loader from '../Loader';
 // ======================================================
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
         <Title title="Phonebook" />
         <FormEl />
         <Filter title="Find contacts by name" />
-        {isLoading && !error && <p>Is loading...</p>}
+        {isLoading && !error && <Loader />}
         <ContactList />
       </Markup>
     </Section>
