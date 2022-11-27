@@ -12,6 +12,7 @@ import { fetchContacts } from '../../redux/operations';
 import { getError, getIsLoading } from 'redux/selectors';
 import Loader from '../Loader';
 // ======================================================
+// ======================================================
 
 export default function App() {
   const dispatch = useDispatch();
