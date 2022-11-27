@@ -1,32 +1,33 @@
-import { PropTypes } from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-// ====================================================
-import { Container, Title, Input } from './Filter.styled';
-import { setFilter } from 'redux/filterSlice';
-import { getFilter } from 'redux/selectors';
-// ====================================================
+import { filterContacts } from 'redux/contacts/contactsSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { Input } from '@chakra-ui/react';
+import { Heading, Flex } from '@chakra-ui/react';
 
-export default function Filter({ title }) {
+export function Filter() {
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
 
   const onFilterChange = event => {
-    dispatch(setFilter(event.currentTarget.value));
+    dispatch(filterContacts(event.currentTarget.value));
   };
   return (
-    <Container>
-      <Title>Contacts</Title>
-      <Input
-        type="text"
-        name="filter"
-        placeholder="Find contacts by name"
-        value={filter.value}
-        onChange={onFilterChange}
-      />
-    </Container>
+    <>
+      <Flex justifyContent="center">
+        <Heading as="h2" size="l">
+          Find contacts
+        </Heading>
+      </Flex>
+      <Flex justifyContent="center" paddingBottom="8px" paddingTop="8px">
+        <Input
+          width="auto"
+          type="text"
+          name="filter"
+          placeholder="Enter search name"
+          value={filter}
+          onChange={onFilterChange}
+        />
+      </Flex>
+    </>
   );
 }
-
-Filter.propTypes = {
-  title: PropTypes.string.isRequired,
-};

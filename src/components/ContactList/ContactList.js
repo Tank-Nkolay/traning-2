@@ -1,40 +1,34 @@
-import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { Container, ContactWrapper } from './ContactList.styled';
-import Item from 'components/ContactItem/ContactItem';
-import { getContacts, getFilter } from 'redux/selectors';
+import { Contact } from 'components/Contact/Contact';
+import { selectContacts, selectFilter } from 'redux/contacts/selectors';
+import { Flex } from '@chakra-ui/react';
 
-export default function ContactList({ title }) {
-  const contacts = useSelector(getContacts);
-  const filter = useSelector(getFilter);
+export default function ContactList() {
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
 
-  const normFilter = filter.value.toLowerCase();
-
-  const filteredContacts = contacts.items.filter(({ name }) =>
-    name?.toLowerCase()?.includes(normFilter)
-  );
+  const filteredContacts = () => {
+    const normFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name?.toLowerCase()?.includes(normFilter)
+    );
+  };
+  const visibleContacts = filteredContacts();
 
   return (
-    <Container>
-      {contacts.items.length > 0 && (
-        <>
-          <ContactWrapper>
-            {filteredContacts.map(({ id, name, number }) => (
-              <Item key={id} id={id} name={name} number={number} />
-            ))}
-          </ContactWrapper>
-        </>
-      )}
-    </Container>
+    <ul>
+      <Flex
+        justifyContent="center"
+        gap="10px"
+        wrap="wrap"
+        backgroundColor="#F7FAFC"
+      >
+        {visibleContacts.map(({ id, name, number }) => (
+          <li key={id}>
+            <Contact id={id} name={name} number={number} />
+          </li>
+        ))}
+      </Flex>
+    </ul>
   );
 }
-
-ContactList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ),
-};
