@@ -9,15 +9,26 @@ export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
-      <NavLink className={css.link} to="/">
-        Home
-      </NavLink>
-      {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
-          Contacts
+    <Box gap="4" display="flex">
+      <Button
+        colorScheme="telegram"
+        _hover={{
+          background: 'white',
+          color: 'teal.500',
+        }}
+      >
+        <NavLink colorScheme="telegram" className={css.link} to="/">
+          Home
         </NavLink>
+      </Button>
+
+      {isLoggedIn && (
+        <Button colorScheme="telegram">
+          <NavLink className={css.link} to="/contacts">
+            Contacts
+          </NavLink>
+        </Button>
       )}
-    </nav>
+    </Box>
   );
 };
