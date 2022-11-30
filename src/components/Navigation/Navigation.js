@@ -3,32 +3,31 @@ import { NavLink } from 'react-router-dom';
 import { Box, Button } from '@chakra-ui/react';
 // =====================
 import { useAuth } from 'hooks';
-import css from './Navigation.module.css';
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <Box gap="4" display="flex">
-      <Button
-        colorScheme="telegram"
-        _hover={{
-          background: 'white',
-          color: 'teal.500',
-        }}
-      >
-        <NavLink colorScheme="telegram" className={css.link} to="/">
-          Home
-        </NavLink>
-      </Button>
-
-      {isLoggedIn && (
-        <Button colorScheme="telegram">
-          <NavLink className={css.link} to="/contacts">
-            Contacts
+    <nav>
+      <Box gap="4" display="flex">
+        <Button
+          colorScheme="telegram"
+          _hover={{
+            background: 'white',
+            color: 'teal.500',
+          }}
+        >
+          <NavLink colorScheme="telegram" to="/">
+            Home
           </NavLink>
         </Button>
-      )}
-    </Box>
+
+        {isLoggedIn && (
+          <Button colorScheme="telegram">
+            <NavLink to="/contacts">Contacts</NavLink>
+          </Button>
+        )}
+      </Box>
+    </nav>
   );
 };

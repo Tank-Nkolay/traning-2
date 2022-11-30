@@ -8,13 +8,11 @@ export function AppBar() {
   const { isLoggedIn } = useAuth();
 
   return (
-    <Box as="header" bgColor="lightskyblue">
-      <Container>
-        <Flex justifyContent="space-between">
-          <Navigation />
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
-        </Flex>
-      </Container>
+    <Box as="header" bgColor="rgb(165, 205, 244)" p="4">
+      <Flex justifyContent="space-between">
+        <Navigation />
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </Flex>
     </Box>
   );
 }
