@@ -10,23 +10,11 @@ export const Navigation = () => {
   return (
     <nav>
       <Box gap="4" display="flex">
-        <Button
-          colorScheme="telegram"
-          _hover={{
-            background: 'white',
-            color: 'teal.500',
-          }}
-        >
-          <NavLink colorScheme="telegram" to="/">
-            Home
-          </NavLink>
-        </Button>
+        <NavLink colorScheme="telegram" to="/">
+          Home
+        </NavLink>
 
-        {isLoggedIn && (
-          <Button colorScheme="telegram">
-            <NavLink to="/contacts">Contacts</NavLink>
-          </Button>
-        )}
+        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
       </Box>
     </nav>
   );
