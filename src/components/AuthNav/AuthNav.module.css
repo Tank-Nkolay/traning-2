@@ -1,11 +1,15 @@
-.link {
-  display: inline-block;
-  text-decoration: none;
-  padding: 12px;
+.navLink {
+  margin-right: 12px;
+  font-style: normal;
   font-weight: 700;
-  color: #2a363b;
+  font-size: 24px;
+  color: #0e0f69;
+}
+.navLink:last-child {
+  margin-right: 0;
 }
 
-.link.active {
-  color: #e84a5f;
+.navLink:hover,
+:focus {
+  color: white;
 }
