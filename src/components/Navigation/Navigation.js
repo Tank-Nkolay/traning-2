@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 // ===== styled ========
-import { Box, Button } from '@chakra-ui/react';
+import { Flex, Image, Box } from '@chakra-ui/react';
+import Logo from '../../images/logo.png';
+// import css from './Navigation.module.css';
 // =====================
 import { useAuth } from 'hooks';
 
@@ -9,13 +11,17 @@ export const Navigation = () => {
 
   return (
     <nav>
-      <Box gap="4" display="flex">
-        <NavLink colorScheme="telegram" to="/">
-          Home
-        </NavLink>
-
-        {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-      </Box>
+      <Flex alignItems="center">
+        <Box h="60px" w="60px" to="/" marginRight="20px">
+          <Image src={Logo} alt="logo" />
+        </Box>
+        <Box marginRight="20px">
+          <NavLink colorScheme="telegram" to="/">
+            Home
+          </NavLink>
+        </Box>
+        <Box>{isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}</Box>
+      </Flex>
     </nav>
   );
 };
