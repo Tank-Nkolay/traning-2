@@ -31,11 +31,6 @@ let schema = yup.object().shape({
 
 export function LoginForm() {
   const dispatch = useDispatch();
-  // const error = useSelector(selectError);
-
-  //  function handleFormSubmit(values) {
-  //    dispatch(logIn(values));
-  // }
 
   const handleFormSubmit = async (values, { resetForm }) => {
     const { error } = await dispatch(logIn(values));
