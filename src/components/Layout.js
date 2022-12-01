@@ -11,8 +11,8 @@ export function Layout() {
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-      <Box as="footer" bgColor="lightskyblue" width="100%">
-        <Flex justifyContent="center" pt="10px" height="48px">
+      <Box as="footer" bgColor="#9bb9f4" width="100%">
+        <Flex alignItems="center" justifyContent="center" height="60px">
           <Footer />
         </Flex>
       </Box>
