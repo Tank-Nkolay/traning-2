@@ -13,12 +13,8 @@ import {
 
 import Notiflix from 'notiflix';
 
-import {
-  useDispatch,
-  // useSelector
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-// import { selectError } from 'redux/auth/selectors';
 
 let schema = yup.object().shape({
   email: yup.string().email().required('Please, enter email'),
