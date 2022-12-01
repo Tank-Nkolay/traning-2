@@ -39,8 +39,8 @@ export function LoginForm() {
   };
 
   return (
-    <Flex bg="gray.100" align="center" justify="center" h="100vh">
-      <Box bg="white" p={6} rounded="md" w="300px">
+    <Flex bg="#cedaf2" justify="center" h="100vh" color="#0e0f69">
+      <Box bg="white" p={6} rounded="md" w="300px" h="270px" mt="20px">
         <Formik
           initialValues={{
             email: '',
