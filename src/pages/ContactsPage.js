@@ -9,6 +9,7 @@ import { selectError } from 'redux/contacts/selectors';
 import ContactList from 'components/ContactList';
 import { ContactItem } from 'components/ContactEditor/ContactItem';
 import { Filter } from 'components/Filter/Filter';
+// =====================
 
 export default function ContactsPage() {
   const dispatch = useDispatch();

@@ -7,6 +7,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Layout } from 'components/Layout';
 import { Spinner } from '@chakra-ui/react';
+// =====================
 
 const Homepage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));

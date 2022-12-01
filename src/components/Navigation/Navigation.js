@@ -4,6 +4,7 @@ import { Flex, Image, Box } from '@chakra-ui/react';
 import Logo from '../../images/logo.png';
 // =====================
 import { useAuth } from 'hooks';
+// =====================
 
 export const Navigation = () => {
   const { isLoggedIn } = useAuth();

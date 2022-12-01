@@ -4,6 +4,7 @@ import { Input, Flex } from '@chakra-ui/react';
 //====================
 import { filterContacts } from 'redux/contacts/contactsSlice';
 import { selectFilter } from 'redux/contacts/selectors';
+// =====================
 
 export function Filter() {
   const dispatch = useDispatch();

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import toast from 'react-hot-toast';
+// =====================
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -23,7 +24,6 @@ export const register = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const { data } = await axios.post('/users/signup', credentials);
-      // toast.success(`You are registred `);
       setAuthHeader(data.token);
 
       return data;

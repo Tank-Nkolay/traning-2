@@ -4,6 +4,7 @@ import { CloseIcon } from '@chakra-ui/icons';
 import { Flex, Text, Button } from '@chakra-ui/react';
 // =====================
 import { deleteContact } from 'redux/contacts/operations';
+// =====================
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();

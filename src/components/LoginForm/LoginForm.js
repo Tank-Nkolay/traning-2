@@ -1,5 +1,7 @@
 import { Field, Formik } from 'formik';
 import * as yup from 'yup';
+import Notiflix from 'notiflix';
+// ===== styled ========
 import {
   Box,
   Button,
@@ -10,11 +12,10 @@ import {
   Input,
   VStack,
 } from '@chakra-ui/react';
-
-import Notiflix from 'notiflix';
-
+// =====================
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
+// =====================
 
 let schema = yup.object().shape({
   email: yup.string().email().required('Please, enter email'),

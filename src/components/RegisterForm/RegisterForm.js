@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
 import { Field, Formik } from 'formik';
 import Notiflix from 'notiflix';
 import * as yup from 'yup';
+// ===== styled ========
 import {
   Box,
   Button,
@@ -13,6 +13,9 @@ import {
   Input,
   VStack,
 } from '@chakra-ui/react';
+// =====================
+import { register } from 'redux/auth/operations';
+// =====================
 
 let schema = yup.object().shape({
   name: yup.string().min(3).max(20),

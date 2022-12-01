@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Box, Text, Button } from '@chakra-ui/react';
 // =====================
 import { logOut } from 'redux/auth/operations';
+// =====================
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
