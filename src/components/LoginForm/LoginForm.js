@@ -40,7 +40,7 @@ export function LoginForm() {
 
   return (
     <Flex bg="gray.100" align="center" justify="center" h="100vh">
-      <Box bg="white" p={6} rounded="md">
+      <Box bg="white" p={6} rounded="md" w="300px">
         <Formik
           initialValues={{
             email: '',
@@ -82,7 +82,7 @@ export function LoginForm() {
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
                 </FormControl>
 
-                <Button type="submit" colorScheme="purple" width="full">
+                <Button type="submit" colorScheme="telegram" width="full">
                   Log In
                 </Button>
               </VStack>

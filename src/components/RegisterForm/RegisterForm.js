@@ -34,8 +34,14 @@ export function RegisterForm() {
   };
 
   return (
-    <Flex bg="#e2e8f5" align="center" justify="center" h="100vh">
-      <Box bg="white" p={6} rounded="md">
+    <Flex
+      bg="#cedaf2"
+      align="center"
+      justify="center"
+      h="100vh"
+      color="#0e0f69"
+    >
+      <Box bg="white" p={6} rounded="md" w="300px">
         <Formik
           initialValues={{
             name: '',
@@ -94,7 +100,7 @@ export function RegisterForm() {
                   <FormErrorMessage>{errors.password}</FormErrorMessage>
                 </FormControl>
 
-                <Button type="submit" colorScheme="purple" width="full">
+                <Button type="submit" colorScheme="telegram" width="full">
                   Log In
                 </Button>
               </VStack>
