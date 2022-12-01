@@ -3,15 +3,15 @@ import { DeleteIcon } from '@chakra-ui/icons';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 
-import { Card, Text, CardBody, Button } from '@chakra-ui/react';
+import { Box, Text, Button } from '@chakra-ui/react';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <Card>
-      <CardBody
+    <Box>
+      <Box
         minW={100}
         h={50}
         display="flex"
@@ -26,7 +26,7 @@ export const Contact = ({ id, name, number }) => {
         <Button colorScheme="blue" type="button" onClick={handleDelete} w={10}>
           <DeleteIcon w={5} h={5} />
         </Button>
-      </CardBody>
-    </Card>
+      </Box>
+    </Box>
   );
 };

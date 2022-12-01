@@ -1,22 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
-import {
-  selectIsLoading,
-  selectError,
-  selectContacts,
-} from 'redux/contacts/selectors';
+import { selectError } from 'redux/contacts/selectors';
 import ContactList from 'components/ContactList';
-import { ContactEditor } from 'components/ContactEditor/ContactEditor';
+import { ContactItem } from 'components/ContactEditor/ContactItem';
 
 import { Filter } from 'components/Filter/Filter';
-
-import { Spinner } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const contacts = useSelector(selectContacts);
   const error = useSelector(selectError);
 
   useEffect(() => {
@@ -24,27 +17,18 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <>
-      <ContactEditor />
-
-      {contacts.length > 0 && (
-        <>
-          <Filter />
-        </>
-      )}
-      <>
-        {isLoading && (
-          <Spinner
-            thickness="4px"
-            speed="0.65s"
-            emptyColor="gray.200"
-            color="blue.500"
-            size="xl"
-          />
-        )}
-      </>
+    <Box h="100vh" w="564px" ml="auto" mr="auto" p="32px">
+      <ContactItem />
+      <Filter />
       <ContactList />
       {error}
-    </>
+    </Box>
   );
 }
+
+// rounded = 'md';
+// bg="gray.100" align="center" justify="center" h="100vh"
+// justifyContent="center"
+// gap="10px"
+// wrap="wrap"
+// backgroundColor="#F7FAFC"

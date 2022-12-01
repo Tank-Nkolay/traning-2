@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Contact } from 'components/Contact/Contact';
 import { selectContacts, selectFilter } from 'redux/contacts/selectors';
-import { Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 export default function ContactList() {
   const contacts = useSelector(selectContacts);
@@ -17,18 +17,13 @@ export default function ContactList() {
 
   return (
     <ul>
-      <Flex
-        justifyContent="center"
-        gap="10px"
-        wrap="wrap"
-        backgroundColor="#F7FAFC"
-      >
+      <Box>
         {visibleContacts.map(({ id, name, number }) => (
           <li key={id}>
             <Contact id={id} name={name} number={number} />
           </li>
         ))}
-      </Flex>
+      </Box>
     </ul>
   );
 }
