@@ -11,7 +11,7 @@ import { ContactEditor } from 'components/ContactEditor/ContactEditor';
 
 import { Filter } from 'components/Filter/Filter';
 
-import { CircularProgress } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -34,7 +34,13 @@ export default function ContactsPage() {
       )}
       <>
         {isLoading && (
-          <CircularProgress isIndeterminate color="green.300" size="30px" />
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
+          />
         )}
       </>
       <ContactList />

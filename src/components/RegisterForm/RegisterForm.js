@@ -34,7 +34,7 @@ export function RegisterForm() {
   };
 
   return (
-    <Flex bg="gray.100" align="center" justify="center" h="100vh">
+    <Flex bg="#e2e8f5" align="center" justify="center" h="100vh">
       <Box bg="white" p={6} rounded="md">
         <Formik
           initialValues={{
