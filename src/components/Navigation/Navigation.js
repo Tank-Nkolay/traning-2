@@ -16,7 +16,7 @@ export const Navigation = () => {
         fontSize="24px"
         fontWeight="700"
       >
-        <Box h="60px" w="60px" to="/" marginRight="20px">
+        <Box h="60px" w="60px" to="/" mr="20px">
           <Image src={Logo} alt="logo" />
         </Box>
         <Box marginRight="20px" _hover={{ color: '#000' }}>

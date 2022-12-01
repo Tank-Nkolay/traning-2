@@ -6,7 +6,7 @@ import { refreshUser } from 'redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { Layout } from 'components/Layout';
-import { CircularProgress } from '@chakra-ui/react';
+import { Spinner } from '@chakra-ui/react';
 
 const Homepage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -22,7 +22,13 @@ export function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <CircularProgress isIndeterminate color="green.300" size="30px" />
+    <Spinner
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color="blue.500"
+      size="xl"
+    />
   ) : (
     <Routes>
       <Route path="/" element={<Layout />}>

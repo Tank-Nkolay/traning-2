@@ -5,7 +5,6 @@ const extraActions = [fetchContacts, addContact, deleteContact];
 
 const getActionsWithType = type =>
   extraActions.map(extraAction => extraAction[type]);
-// ...extraActions.map(extraAction => extraAction.pending)
 
 const handleFetchContactsReducer = (state, action) => {
   state.items = action.payload;
