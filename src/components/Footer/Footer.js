@@ -5,8 +5,8 @@ import { Text } from '@chakra-ui/react';
 
 export const Footer = () => {
   return (
-    <Text fontSize="18px" color="#fff">
-      FOOTER
+    <Text color="#fff" fontSize="18px">
+      Pokemon PhoneBook - App that will make your life easier!
     </Text>
   );
 };

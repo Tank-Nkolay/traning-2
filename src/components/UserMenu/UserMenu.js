@@ -1,7 +1,7 @@
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 // ===== styled ========
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Text, Button } from '@chakra-ui/react';
 // =====================
 import { logOut } from 'redux/auth/operations';
 
@@ -17,7 +17,9 @@ export const UserMenu = () => {
       display="flex"
       alignItems="center"
     >
-      <p>Welcome, {user.name}</p>
+      <Text fontSize="24px" fontWeight="400">
+        Welcome, {user.name}
+      </Text>
       <Button onClick={() => dispatch(logOut())} colorScheme="telegram">
         Log Out
       </Button>

@@ -18,7 +18,17 @@ export default function ContactsPage() {
   }, [dispatch]);
 
   return (
-    <Box h="100vh" w="564px" ml="auto" mr="auto" p="32px">
+    <Box
+      h="100vh"
+      w="564px"
+      mt="32px"
+      mb="32px"
+      ml="auto"
+      mr="auto"
+      p="32px"
+      rounded="md"
+      bgColor="#fff"
+    >
       <ContactItem />
       <Filter />
       <ContactList />
@@ -26,10 +36,3 @@ export default function ContactsPage() {
     </Box>
   );
 }
-
-// rounded = 'md';
-// bg="gray.100" align="center" justify="center" h="100vh"
-// justifyContent="center"
-// gap="10px"
-// wrap="wrap"
-// backgroundColor="#F7FAFC"
