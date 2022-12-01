@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
+//===== styled =======
+import { Input, Flex } from '@chakra-ui/react';
+//====================
 import { filterContacts } from 'redux/contacts/contactsSlice';
 import { selectFilter } from 'redux/contacts/selectors';
-import { Input } from '@chakra-ui/react';
-import { Heading, Flex } from '@chakra-ui/react';
 
 export function Filter() {
   const dispatch = useDispatch();
@@ -13,17 +14,12 @@ export function Filter() {
   };
   return (
     <>
-      <Flex justifyContent="center">
-        <Heading as="h2" size="l">
-          Find contacts
-        </Heading>
-      </Flex>
-      <Flex justifyContent="center" paddingBottom="8px" paddingTop="8px">
+      <Flex justifyContent="center" pt="10px" pb="10px" color="#0e0f69">
         <Input
           width="auto"
           type="text"
           name="filter"
-          placeholder="Enter search name"
+          placeholder="Find contacts by name"
           value={filter}
           onChange={onFilterChange}
         />

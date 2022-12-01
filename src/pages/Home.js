@@ -7,6 +7,7 @@ export default function Home() {
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
+      bgColor="#cedaf2"
     >
       <Text fontSize="6xl" color="#0e0f69" fontWeight="700">
         Your best PhoneBook

@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
+// ===== styled ========
+import { Box } from '@chakra-ui/react';
+// =====================
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectError } from 'redux/contacts/selectors';
 import ContactList from 'components/ContactList';
 import { ContactItem } from 'components/ContactEditor/ContactItem';
-
 import { Filter } from 'components/Filter/Filter';
-import { Box } from '@chakra-ui/react';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();

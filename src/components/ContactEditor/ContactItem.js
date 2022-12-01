@@ -1,25 +1,24 @@
 import { Field, Formik } from 'formik';
 import * as yup from 'yup';
-
+import toast, { Toaster } from 'react-hot-toast';
+// ===== styled ========
 import {
   Box,
   Button,
-  Flex,
   FormControl,
   FormLabel,
   FormErrorMessage,
   Input,
   VStack,
 } from '@chakra-ui/react';
-
-import toast, { Toaster } from 'react-hot-toast';
+// =====================
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-import { useDispatch, useSelector } from 'react-redux';
 
 let schema = yup.object().shape({
-  name: yup.string().required('Please, enter name'),
-  number: yup.string().min(7).required('Please, enter correct number'),
+  name: yup.string().required('``Please, enter name'),
+  number: yup.string().min(7).required('``Please, enter correct number'),
 });
 
 export function ContactItem() {
@@ -41,7 +40,7 @@ export function ContactItem() {
           const { name } = values;
           const nameToRegistr = name.toLowerCase();
           if (findDuplicateName(contacts.items, nameToRegistr)) {
-            toast.error(`${name} is already in your contacts`);
+            toast.error(```${name} is already in your contacts`);
             return;
           }
 

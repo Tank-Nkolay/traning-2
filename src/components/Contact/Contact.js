@@ -1,32 +1,34 @@
-import { DeleteIcon } from '@chakra-ui/icons';
-
 import { useDispatch } from 'react-redux';
+// ===== styled ========
+import { CloseIcon } from '@chakra-ui/icons';
+import { Flex, Text, Button } from '@chakra-ui/react';
+// =====================
 import { deleteContact } from 'redux/contacts/operations';
-
-import { Box, Text, Button } from '@chakra-ui/react';
 
 export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
-    <Box>
-      <Box
-        minW={100}
-        h={50}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        gap="5px"
-        padding="5px"
+    <Flex
+      alignItems="center"
+      justifyContent="space-between"
+      padding="5px"
+      color="#0e0f69"
+      fontSize="24px"
+    >
+      <Text>
+        {name} : {number}
+      </Text>
+      <Button
+        type="button"
+        onClick={handleDelete}
+        borderRadius="50%"
+        p="5px"
+        colorScheme="orange"
       >
-        <Text>
-          {name} : {number}
-        </Text>
-        <Button colorScheme="blue" type="button" onClick={handleDelete} w={10}>
-          <DeleteIcon w={5} h={5} />
-        </Button>
-      </Box>
-    </Box>
+        <CloseIcon color="#fff" />
+      </Button>
+    </Flex>
   );
 };
