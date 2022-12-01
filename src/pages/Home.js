@@ -8,8 +8,8 @@ export default function Home() {
       alignItems="center"
       justifyContent="center"
     >
-      <Text fontSize="6xl" color="#0e0f69">
-        Your best phonePhoneBook
+      <Text fontSize="6xl" color="#0e0f69" fontWeight="700">
+        Your best PhoneBook
       </Text>
       <Text fontSize="4xl" color="red">
         *to use - Register
