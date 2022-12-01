@@ -25,7 +25,7 @@ export const Contact = ({ id, name, number }) => {
         onClick={handleDelete}
         borderRadius="50%"
         p="5px"
-        colorScheme="orange"
+        colorScheme="telegram"
       >
         <CloseIcon color="#fff" />
       </Button>

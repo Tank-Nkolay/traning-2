@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 // ===== styled ========
 import { Box } from '@chakra-ui/react';
+import css from './ContactsPage.module.css';
 // =====================
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
@@ -19,19 +20,25 @@ export default function ContactsPage() {
 
   return (
     <Box
-      h="100vh"
       w="564px"
-      mt="32px"
-      mb="32px"
+      mt="24px"
       ml="auto"
       mr="auto"
-      p="32px"
+      pl="32px"
+      pr="32px"
+      pt="16px"
+      pb="16px"
       rounded="md"
-      bgColor="#fff"
     >
-      <ContactItem />
-      <Filter />
-      <ContactList />
+      <Box className={css.mainCard}>
+        <ContactItem />
+        <Filter />
+      </Box>
+
+      <Box className={css.secondCard}>
+        <ContactList />
+      </Box>
+
       {error}
     </Box>
   );

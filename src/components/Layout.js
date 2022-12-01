@@ -7,12 +7,12 @@ import css from './Layout.module.css';
 
 export function Layout() {
   return (
-    <Box display="flex" flexDirection="column" height="100vh" bgColor="#cedaf2">
+    <Box display="flex" flexDirection="column" bgColor="#cedaf2">
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-      <Box as="footer" bgColor="#9bb9f4" width="100%" className={css.footer}>
+      <Box as="footer" className={css.footer} bgColor="#9bb9f4" width="100%">
         <Flex>
           <Footer />
         </Flex>
