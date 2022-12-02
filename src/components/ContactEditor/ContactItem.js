@@ -18,8 +18,8 @@ import { selectContacts } from 'redux/contacts/selectors';
 // =====================
 
 let schema = yup.object().shape({
-  name: yup.string().required('``Please, enter name'),
-  number: yup.string().min(7).required('``Please, enter correct number'),
+  name: yup.string().required('Please, enter name'),
+  number: yup.string().min(7).required('Please, enter correct number'),
 });
 
 export function ContactItem() {
@@ -41,7 +41,7 @@ export function ContactItem() {
           const { name } = values;
           const nameToRegistr = name.toLowerCase();
           if (findDuplicateName(contacts.items, nameToRegistr)) {
-            toast.error(```${name} is already in your contacts`);
+            toast.error(`${name} is already in your contacts`);
             return;
           }
 
