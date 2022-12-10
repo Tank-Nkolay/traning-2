@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "traning-2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tank-nkolay.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://tank-nkolay.github.io/traning-2/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.12",
     "@chakra-ui/react": "^2.4.1",
