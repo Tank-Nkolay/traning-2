@@ -6,18 +6,19 @@ const app = express();
 
 const PORT = 8083;
 
-app.get('/home', (request, response) => {
-  response.send('get request');
+app.get('/home', (req, res) => {
+  res.send('get request');
 });
-app.post('/home', (request, response) => {
-  response.send('post request');
+app.post('/home', (req, res) => {
+  res.send('post request');
 });
-app.delete('/home', (request, response) => {
-  response.send('delete request');
+app.delete('/home', (req, res) => {
+  res.send('delete request');
 });
 // use для всех, если предыдущие не могут выполнится
-app.use('/home', (request, response) => {
-  response.send('use request');
+// порядок имеет значение
+app.use((req, res) => {
+  res.send('middleware request');
 });
 
 // запрос на http://localhost:8083/home
