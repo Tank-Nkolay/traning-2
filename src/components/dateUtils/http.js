@@ -4,7 +4,7 @@ const PORT = 8081;
 
 const http = require('http');
 
-// ОТВЕТ 4 === проверка на сервере через /
+// ОТВЕТ 4 === проверка на сервере через / ====
 const requestHandler = (request, response) => {
   if (request.url.indexOf('/home') >= 0) {
     response.writeHead(200, { 'Content-type': 'text/json' });
