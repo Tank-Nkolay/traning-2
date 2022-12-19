@@ -1,5 +1,6 @@
-// вывести в консоль ===
+// вывести в консоль =========
 // node src/components/dateUtils/app
+// ============================
 
 const express = require('express');
 const app = express();
