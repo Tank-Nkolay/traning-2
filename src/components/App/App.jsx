@@ -4,7 +4,6 @@ import { Container } from './App.styled';
 // импорт функции разметки
 import Section from '../Section';
 import Clock from '../Clock';
-import SummTs from '../SummTs/SummTs';
 
 // =============================================================
 export class App extends React.Component {
@@ -15,7 +14,6 @@ export class App extends React.Component {
       <Container>
         <Section title="Clock">
           <Clock />
-          <SummTs />
         </Section>
       </Container>
     );
