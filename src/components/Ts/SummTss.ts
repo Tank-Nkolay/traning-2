@@ -56,3 +56,30 @@ const page2 = {
   accounts: ['Alex'],
   status: 'close',
 };
+
+const button = document.querySelector('button');
+const input1 = document.getElementById('num1')! as HTMLInputElement;
+const input2 = document.getElementById('num2')! as HTMLInputElement;
+
+function add(num1: number, num2: number) {
+  return num1 + num2;
+}
+
+button.addEventListener('click', function () {
+  console.log(add(+input1.value, +input2.value));
+});
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple TypeScript page</title>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <input type="number" id="num1" placeholder="Number 1" />
+    <input type="number" id="num2" placeholder="Number 2" />
+    <button>Add!</button>
+  </body>
+</html>
