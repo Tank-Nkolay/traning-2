@@ -70,6 +70,7 @@ button.addEventListener('click', function () {
 });
 
 <!DOCTYPE html>
+// 'Sorry, there are no news matching your query. Please try again.'
 <html>
   <head>
     <meta charset="UTF-8" />
