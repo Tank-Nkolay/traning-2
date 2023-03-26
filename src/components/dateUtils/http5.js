@@ -22,20 +22,3 @@ app.listen(PORT, error => {
   }
   console.log(`Server works at port ${PORT}!`);
 });
-
-// =====
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.originalUrl} ${new Date().toISOString()}`);
-  next();
-});
-
-app.get('/home', (req, res) => {
-  res.json({ js: 'object' });
-});
-
-app.listen(PORT, error => {
-  if (error) {
-    console.error('Error at server launch', error);
-  }
-  console.log(`Server works at port ${PORT}!`);
-});
