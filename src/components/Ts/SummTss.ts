@@ -293,3 +293,5 @@ function compare (top, bottom): AllType {
     weight: bottom.weight,
   }
 }
+
+// ===========
